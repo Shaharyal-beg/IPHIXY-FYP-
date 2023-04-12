@@ -17,7 +17,7 @@ const About = () => {
         <br /><br />
         <h4 style={{textAlign:"left",fontSize:"1.8vw",color:'grey',fontWeight:'bold'}}>Our Mission</h4>
         
-        <p style={{textAlign:'left',color:'#a0a0a0',fontSize:'22px',fontWeight:'normal'}}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, expedita! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam debitis, numquam quis commodi optio ex, ea quos repellendus officia sapiente deserunt distinctio sequi! Nisi, eos.</p>
+        <p style={{textAlign:'left',color:'#a0a0a0',fontSize:'22px',fontWeight:'normal'}}>  elit. Omnis, expedita! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam debitis, numquam quis commodi optio ex, ea quos repellendus officia sapiente deserunt distinctio sequi! Nisi, eos.</p>
         <br />
         <div className='abt-main-con'>
           <div className='abt-sub-con abt-sub-con1'>
