@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+     
+}
+.nav{
+    background-color: white;
+    width: 100vw;
+    height: 11vh;
+    margin-top: 0;
+    z-index: 2;
+    position: fixed;
+    
+    
+}
+.logo{
+    float: left;
+    margin-top: 1.3vh;
+    margin-left: 4vw;
+    
+    
+}
+.logo,img{
+    width: 18vw;
+    height: 7vh;
+    margin-bottom: 2vh;
+    z-index: 3;
+    
+}
+.nav-list{
+    background-color: white;
+    width: 60vw;
+    height: 10vh;
+    margin-right: 0; 
+    margin-left: 40vw;
+   
+}
+.all-nav-items{
+    display: flex;
+    
+    
+    margin: auto; 
+}
+li{
+    margin-top: 4vh;
+    margin-left: 4vw;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color:#9f9f9f;
+    font-size: 22px;
+   font-weight: bolder;
+   
+   
+}
+li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color:  #47a5dd;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+
+}
+li:hover:after{
+    transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.nav-button{
+    width: 6vw;
+    height: 6.5vh;
+    background-color: rgb(236, 229, 229);
+    background-color: #47a5dd;
+    text-align: center;
+    margin-left: 2vw;
+    border-radius: 10px;
+    
+}
+.disable{
+    pointer-events: none;
+    
+}
+
+.v-menu{
+    height: 100vh;
+    width: 100vw;
+    background: blue;
+    position: fixed;
+    right: -100vw;
+    top: 0;
+    z-index: 1;
+    transition: all 0.3s;
+}
+.hamburger{
+    display: none;
+    width:50px;
+    height: 50px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    right:1vw;
+    top:2vh;
+    margin:5px 10px 10px 10px;
+}
+.hamburger:hover+.v-menu{
+    right:0;
+}
+
+.v-menu:hover{
+    right:0;
+}
+*/
+
+.v-menu-open{
+    right:0;
+}
+    
+.v-menu{
+      background:rgba(52, 152, 219,0.5);
+}
+
+.v-menu li{
+    font-size:2em;
+    color:#2d2d2d;
+    padding:5%;
+    display: block;
+}
+
+
+@media screen and (max-width:480px){
+    .hamburger{
+        display: block;
+    }
+    .nav-list{
+        display: none;
+    }
+}   

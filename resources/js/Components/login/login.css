@@ -1,0 +1,58 @@
+.log-for{ 
+    width: 60vw;
+    height: 75vh;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    
+    align-items: center;
+    text-align: center;
+    color: grey;
+}
+.lform-top{
+    width: 40vw;
+    height: 15vh;
+    margin-top: 15vh;
+    
+    margin-left: 10vw;
+}
+.wt{
+    font-size: 25px;
+    text-align: center;
+}
+.l-form{
+    width: 30vw;
+    height: 45vh;
+    margin-left: 15vw;
+    padding-left: 3vw;
+    padding-top: 5vh;
+    align-items: left;
+    text-align: left;
+    font-size: 20px;
+}
+input{
+    width: 20vw;
+    height: 4vh;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid;
+}
+.log-but{
+    background-color: #057dbb;
+    border: none;
+    height: 4vh;
+    width: 6vw;
+    font-size: 18px;
+    color: white;
+    margin-top: 2vh;
+    margin-left: 0;
+}
+.rmr,.fg{
+    font-size: 13px;
+   
+}
+.fg{
+    color: #057dbb;
+    font-weight: bold;
+    margin-left: 5vw;
+}

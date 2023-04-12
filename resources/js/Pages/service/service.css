@@ -1,0 +1,55 @@
+.serv{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, white 40%, #00acff 100%);
+
+}
+.ser-h{
+    text-align: center;
+    margin-top: 4vh;
+    color: #00acff; 
+    font-size: 2.8vw;
+    font-weight: bolder;
+}
+.main-scon{
+    width: 80vw;
+    height: 60vh;
+    
+    margin-left: 10vw;
+    margin-top: 6vh;
+}
+.sub-scon{
+    width: 22vw;
+    height: 60vh;
+    float: left;
+    margin-left: 3.6vw;
+    border-radius: 20px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+.scon1{
+    background-image: url('./user.PNG');
+}
+.scon2{
+    background-image: url('./repiarer.jpg');
+}
+.scon3{
+    background-image: url('./scrabbuyer.jpg');
+}
+.ser-p{
+    font-size: 25px;
+    text-align: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 4vh; 
+    color: white;
+}
+.sub-scon:hover{
+    background-image: none;
+    background-color: rgb(14, 152, 207);
+}

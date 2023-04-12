@@ -1,0 +1,59 @@
+.ep_main{
+    width: 100vw;
+    height: auto;
+    background-color: white;
+}
+.ep-main-con{
+    width: 90vw;
+    height: 210vh;
+    background-color: white;
+    margin: 0vh 0 0 5vw;
+}
+.ep-subpage{
+    width: 100vw;
+    height: 220vh;
+    background-color: #EFEFEF;
+    padding-top: 8vh;
+}
+.edit-avatar-content{
+    width: 30vw;
+    height: 180vh;
+    margin: 8vh 0 0 4vw;
+    background-color: #EFEFEF;
+    float: left;
+
+}
+.divider-ep{
+    width: 90vw;
+    height: 1vh;
+    margin-top: 6vh;
+    background-color: #C9C8C8;
+}
+.edit-form{
+    width: 50vw;
+    height: 180vh;
+    margin: 8vh 0 0 37vw;
+    background-color: white;
+    padding: 2vw;
+}
+.ep-avatar{
+    margin: 2vh 0 0 4.5vw;
+}
+.about-you{
+    width: 24vw;
+    height: 140vh;
+    margin: 4vh 0 0 3vw;
+    background-color: #E0E0E0;
+    padding: 2vw;
+    border-radius: 5px;
+}
+.ep_input{
+    border: 2px solid;
+    float: left;
+    width: 18vw;
+    height: 4.5vh;
+    margin: 0.5vh 2vw 3vh 2vw ;
+    background-color: #F2F2F2;
+    border:1px solid #A0A0A0;
+    
+}
