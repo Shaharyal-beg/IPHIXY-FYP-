@@ -1,0 +1,21 @@
+.pro{
+    width: 100vw;
+    height: 40vh;
+    background-color: white;
+    color: #00acff;
+    text-align: center;
+}
+.main-pcon{
+    width: 86vw;
+    height: 30vh;
+    margin-left: 7vw;
+    margin-top: 2vh;
+}
+.sub-pcon{
+    width: 19vw;
+    height: 27vh;
+    margin-left: 2vw;
+    float: left;
+    margin-top: 3vh;
+    text-align: left;
+}

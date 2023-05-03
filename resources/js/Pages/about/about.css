@@ -1,0 +1,59 @@
+.abt{
+    width: 100vw;
+    height: 115vh;
+    background-color: #efefef;
+   
+}
+.abt-pic{
+    width: 35vw;
+    margin-top: 5vh;
+    height: 91vh;
+    float: left;
+    background-image: url(./ServiceMan.png);
+    object-fit: cover;
+    background-size: cover;
+    
+}
+.abt-cont{
+    width: 65vw;
+    height: 99vh;
+    margin-left: 35vw;
+    text-align: left;
+   
+    padding: 3vw;
+}
+.abt-main-con{
+    width: 60vw;
+    height: 63vh;
+}
+.abt-sub-con{
+    width: 29vw;
+    height: 27vh;
+    
+    float: left;
+    /* margin-bottom: 1vh; */
+    margin-right: 1vh;
+    
+    
+}
+.sub-icon{
+    height: 30vh;
+    width: 10vw;
+   
+    float: left;
+}
+.sub-con{
+    height: 30vh;
+    width:30vw;
+    color: #898989;
+    
+}
+.icon-img{
+    width: 6vw ;
+    height: 12vh;
+    margin-top: 7vh;
+    margin-left: 2vw;
+
+
+}
+

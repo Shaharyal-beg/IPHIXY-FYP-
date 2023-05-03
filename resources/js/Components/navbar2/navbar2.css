@@ -1,0 +1,26 @@
+.ump-nav{
+    width: 100vw;
+    height: 11vh;
+   
+}
+.ump-nav-list{
+    width: 70vw;
+    height: 11vh;
+    
+    margin-left: 30vw;
+    padding: 0;
+}
+.logo{
+    float: left;
+    margin-top: 1.3vh;
+    margin-left: 4vw;
+    
+    
+}
+.logo,img{
+    width: 18vw;
+    height: 7vh;
+    margin-bottom: 2vh;
+    z-index: 3;
+    
+}

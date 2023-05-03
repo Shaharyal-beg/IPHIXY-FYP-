@@ -1,0 +1,32 @@
+.frm{
+    width: 60vw;
+    height: 95vh;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-image: url(./sign-bg.jpg);
+    background-size: cover;
+    object-fit: cover;
+    align-items: center;
+    text-align: center;
+    color: grey;
+}
+.sform-top{
+    width: 40vw;
+    height: 15vh;
+    margin-top: 15vh;
+    
+    margin-left: 10vw;
+   background-color: black;
+}
+.s-form{
+    width: 30vw;
+    height: 65vh;
+    margin-left: 15vw;
+    padding-left: 3vw;
+    padding-top: 5vh;
+    background-color: antiquewhite;
+    align-items: left;
+    text-align: left;
+    font-size: 25px;
+}

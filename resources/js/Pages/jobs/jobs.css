@@ -1,0 +1,75 @@
+.jobs-mp{
+    width: 100vw;
+    height: auto;
+    background-color: white;
+}
+.first-con{
+    width: 100vw;
+    height: 20vh;
+    background-color: #EFEFEF;
+}
+.jobs-subpage{
+    width: 100vw;
+    height: 220vh;
+    background-color: rgb(252, 249, 249); 
+    padding-top: 4vh;
+    padding-left: 4vh; 
+      
+}
+.jobs-subcon{
+    width: 20vw;
+    height: 65vh;
+    background-color: rgb(124, 125, 126);
+    float: left;
+    margin-left: 8vw;
+    margin-top: 4vh;
+    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.img-subcon{
+    width: 20vw;
+    height: 30vh;
+    background-color: white;
+
+}
+.product-pic{
+    width: 20vw;
+    height: 30vh;
+
+}
+.content-subcon{
+    width: 20vw;
+    height: 28vh;
+    background-color: #EDEDED;
+}
+.bid-area{
+    width: 20vw;
+    height: 7vh;
+    background-color: #00ACFF;
+    
+}
+.select-box{
+    border: 0px solid white;
+   background-color: 
+   #A0A0A0;
+    
+}
+#selection-box{
+    width: 20vw;
+    height: 8vh;
+    border: 0px solid white;
+    background-color: 
+    #A0A0A0;
+    margin-left: 9vw;
+    margin-top: 8vh;
+    float: left;
+}
+.selection-box{
+    width: 20vw;
+    height: 8vh;
+    
+    margin-left: 9vw;
+    margin-top: 8vh;
+    float: left;
+
+}
