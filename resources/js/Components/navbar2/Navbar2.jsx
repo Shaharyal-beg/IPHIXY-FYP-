@@ -21,8 +21,8 @@ const Navbar2 = () => {
                 <li style={{marginTop:'3vh'}}> <ModeEditIcon/> <a href="/edit-profile">Edit Profile</a> </li>
                 <li><AddBoxIcon/> <a href="/post-job"> Post a Job</a></li>
                 <li><ChatIcon/>  Chat</li>
-                <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'lightgrey'}}/></li>
-                <li style={{marginRight:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
+                <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'lightgrey',width:'8vw'}}/></li>
+                <li style={{marginLeft:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
                 </ul>
                 
         </div>

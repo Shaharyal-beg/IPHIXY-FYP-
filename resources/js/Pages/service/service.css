@@ -1,6 +1,6 @@
 .serv{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background: linear-gradient(to bottom, white 40%, #00acff 100%);
 
 }

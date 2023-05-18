@@ -5,7 +5,7 @@
 }
 .ep-main-con{
     width: 90vw;
-    height: 210vh;
+    height: 220vh;
     background-color: white;
     margin: 0vh 0 0 5vw;
 }
@@ -17,7 +17,7 @@
 }
 .edit-avatar-content{
     width: 30vw;
-    height: 180vh;
+    height: 150vh;
     margin: 8vh 0 0 4vw;
     background-color: #EFEFEF;
     float: left;
@@ -41,7 +41,7 @@
 }
 .about-you{
     width: 24vw;
-    height: 140vh;
+    height: 80vh;
     margin: 4vh 0 0 3vw;
     background-color: #E0E0E0;
     padding: 2vw;

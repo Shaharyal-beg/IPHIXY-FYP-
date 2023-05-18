@@ -16,12 +16,12 @@ const Navbar3 = () => {
         <div className='logo'>
         <img src={logo} alt="logo" />
         </div>
-        <div className='ump-nav-list'>
+        <div className='ump-nav-list3'>
             <ul>
                 <li style={{marginTop:'3vh'}}> <ModeEditIcon/> <a href="/edit-profile">Edit Profile</a> </li>
                 <li><AddBoxIcon/> <a href="/jobs">Jobs</a></li>
-                <li><ChatIcon/>  Chat</li>
-                <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'lightgrey'}}/></li>
+                <li><ChatIcon/> <a href='/chat'> Chat</a></li>
+                <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'black'}}/></li>
                 <li style={{marginRight:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
                 </ul>
                 

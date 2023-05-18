@@ -1,8 +1,9 @@
 .user-mp{
     width: 100vw;
-    height: auto;
+    height: 170vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
    
 }
 .ump-main-sec{
@@ -28,6 +29,13 @@
     color: white;
     font-size: 1.2vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.user-email-name{
+    width: 15vw;
+    height: 14vh;
+    margin: -1vh 0 0 5vw;
+  
+    text-align: center;
 }
 .w_logo{
     margin: 3vw 0 0 2vw;
@@ -68,7 +76,7 @@
 }
 .ump-sub-sec6{
     width: 50vw;
-    height: 43vh;
+    height: 40vh;
     margin-left: 40vw;
     margin-top: 3vh;
     background-color: lightgray;

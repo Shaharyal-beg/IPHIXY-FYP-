@@ -36,21 +36,19 @@ const scrap = () => {
           <label style={{marginLeft:'2vw'}}>Full Name</label><br />
           <input className='ep_input' placeholder='Enter your name'></input>
           <label style={{marginLeft:'2vw'}}>User Name</label><br />
-          <input className='ep_input' placeholder='Enter your name'></input>
+          <input className='ep_input' placeholder='Enter your Username'></input>
           <label style={{marginLeft:'2vw'}}>Email Address</label><br />
-          <input className='ep_input' placeholder='Enter your name' style={{width:'40vw'}}></input>
+          <input className='ep_input' placeholder='Enter your email address' style={{width:'40vw'}}></input>
           <label style={{marginLeft:'2vw'}}>Password</label><br />
-          <input className='ep_input' placeholder='Enter your name' style={{width:'40vw'}}></input>
+          <input className='ep_input' placeholder='Enter your password' style={{width:'40vw'}}></input>
           <label style={{marginLeft:'2vw'}}>Confrim-Password</label><br />
-          <input className='ep_input' placeholder='Enter your name' style={{width:'40vw'}}></input>
+          <input className='ep_input' placeholder='confrim password' style={{width:'40vw'}}></input>
           <label style={{marginLeft:'2vw'}}>DOB</label><br />
-          <input className='ep_input' placeholder='Enter your name'></input>
+          <input className='ep_input' placeholder='dob'></input>
           <label style={{marginLeft:'2vw'}}>Gender</label><br />
-          <input className='ep_input' placeholder='Enter your name'></input>
+          <input className='ep_input' placeholder='Enter your gender'></input>
           <label style={{marginLeft:'2vw'}}>City</label><br />
-          <input className='ep_input' placeholder='Enter your name'></input>
-          <label style={{marginLeft:'2vw'}}>Enter OTP</label><br />
-          <input className='ep_input' placeholder='Enter your name'></input> 
+          <input className='ep_input' placeholder='Enter your city name'></input><br/>
           <h1 style={{fontSize:'2vw',fontWeight:'bolder'}}>About</h1>
             <div className='divider-ep' style={{backgroundColor:'black',width:"45vw",marginTop:'2vh'}}></div><br />
             <label style={{fontSize:'2vw',marginLeft:'2vw'}}>Education</label>
@@ -68,11 +66,7 @@ const scrap = () => {
             <input className='ep_input' placeholder='Enter your name' style={{width:'40vw'}}></input>
             <input className='ep_input' placeholder='Enter your name'></input>
             <input className='ep_input' placeholder='Enter your name'></input>
-            <label style={{fontSize:'2vw',marginLeft:'2vw'}}>Education</label>
-            <button  style={{marginLeft:'18vw',backgroundColor:'#00ACFF',border:'1px solid white',color:'white',width:'4vw',height:'4vh',borderRadius:'5px'}}>Add Field</button>
-            <button  style={{backgroundColor:'#A0A0A0',border:'1px solid white',color:'white',width:'5vw',height:'4vh',borderRadius:'5px'}}>delete Field</button><br /><br />
-            <input className='ep_input' placeholder='Enter your name'></input>
-            <input className='ep_input' placeholder='Enter your name'></input>
+            
           </div>
         
         </div>

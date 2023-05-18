@@ -17,12 +17,9 @@ const Landingpage = () => {
       <br />
       <br />
       
-      <button className='bt1'><a href=""> Sevices</a></button>
-      
+      <button className='bt1'><a href=""> Services</a></button>
      <button className='bt2'><a href=''>About US</a></button>
-      
     </div>
   )
 }
-
 export default Landingpage

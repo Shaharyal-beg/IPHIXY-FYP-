@@ -7,6 +7,6 @@ export {default as User} from './user/User'
 export {default as EditProfile} from './edit-profile/EditProfile'
 export {default as Jobpost} from './job-post/Jobpost'
 export {default as Jobs} from './jobs/Jobs'
-
+export {default as Chat} from './chat/chat'
 export {default as Repairer} from './repairer/Repairer'
 

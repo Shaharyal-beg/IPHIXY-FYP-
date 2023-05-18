@@ -1,0 +1,91 @@
+.chat{
+    width: 100vw;
+    height: 130vh;
+    background-color: white;
+    padding-top: 8vh ;
+}
+.chat-sec1{
+    width: 370px;
+    height: 120vh;
+    margin-left: 10vw;
+    float: left;
+    background-color: #00ACFF;
+}
+.chat-sec2{
+    width: 748px;
+    height: 120vh;
+    margin-left:37vw;
+    background-color: #F2F2F2;
+}
+.chathead-1{
+    width: 370px;
+    padding: 2vw;
+    text-align: left;
+    height: 12vh;
+    color: white;
+    font-size: 20px;
+}
+.chat-search{
+    width: 370px;
+    height: 16vh;
+    padding: 3vw;
+    border-top: 2px solid #7F7E7E ;
+}
+.chat-search input{
+    border-radius: 10px;
+    height: 6vh;
+    background-color: #D9D9D9;
+}
+.name-lm{
+    width: 370px;
+    height: 14vh;
+    background-color: #007DBA;
+    padding: 2vh 2vw;
+    color: white;
+    margin-bottom: 1vh;
+}
+.name-lm img{
+    width: 3vw;
+    height: 10vh;
+    border-radius: 70%;
+    float: left;
+    margin-right: 3vh;
+}
+.name-status{
+    width: 748px;
+    height: 12vh;
+    padding: 2vw;
+    color: #7F7E7E;
+}
+.name-status h1{
+    float: left;
+    color: black;
+    font-size: 22px;
+}
+.name-status h3{
+    font-size: 18px;
+    margin-left: 35vw;
+}
+.message-box{
+    width: 748px;
+    height: 45vw;
+    background-color:#007DBA;
+
+}
+.type-box{
+    width: 748px;
+    height: 4.4vw;
+    
+}
+.type-box input{
+    width: 620px;
+    height: 4.4vw;
+    float: left;
+}
+.type-box button{
+    width: 68px;
+    height: 4vw;
+    background-color: #00ACFF;
+    margin-top: 1vh;
+    border-radius: 10px;
+}

@@ -1,6 +1,6 @@
 .foot{
     width: 100vw;
-    height: 50vh;
+    height: 60vh;
     background-color: #00acff;
     margin: 0;
     padding: 0;
@@ -12,23 +12,17 @@
     color: white;
     padding-top: 2.5vh;
     margin-left: 10vw;
-    
-
 }
 .b-foot{
     width: 30vw;
-    height: 35vh;
-    
+    height: 35vh; 
     margin-left: 2.5vw;
     float: left;
-    padding-right: 5vw;
-    
+    padding-right: 5vw; 
 }
 .s-foot{
     width: 12.5vw;
     height: 35vh;
     margin-left: 2.5vw;
-    
     float: left;
-
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Head } from '@inertiajs/react';
-import {Landingpage,  Footer, About, Service, User, EditProfile, Jobpost, Jobs} from './';
+import {Landingpage,  Footer, About, Service, User, EditProfile, Jobpost, Jobs,Chat} from './';
  import {Navbar, Separator, Process, About2, Form,Login } from '../Components';
 import './App.css';
 import Lastfooter from '../Components/last-footer/Lastfooter';
@@ -20,12 +20,13 @@ function App() {
         <About2 />
         <Footer />
         <Lastfooter/>
-        <Jobs/>
+        {/* <Jobs/> */}
         {/* <Login /> */}
         {/* <User />
          */}
          {/* <EditProfile/>  */}
          {/* <Jobpost/>      */}
+         <Chat/>
         <Head title="Home" />
     </div>
     

@@ -2,7 +2,6 @@ import React from 'react'
 import './user.css'
 import Avatar from 'react-avatar';
 import avatar1 from './ava1.jpg';
-import mia from './mia.jpg';
 import aksh from './aksh.jpg';
 import anum from './anum.jpg';
 import david from './david.jpg';
@@ -37,15 +36,15 @@ export default function Authenticated({ auth }) {
         <div className='ump-sub-sec1'>
           <MoreHorizIcon style={{ marginLeft: '23.5vw' }} />
           <Avatar src={david} round size='9vw' style={{ marginLeft: '8vw' }} /> <br /><br />
-          <h2 style={{ marginLeft: '10vw', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.name}</h2>
-          <h3 style={{ marginLeft: '7vw', color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}</h3> <br />
-          <h2 style={{ marginLeft: '9vw', color: 'orange' }}><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></h2><br />
-          <p style={{ marginLeft: '1vw', color: 'grey', fontWeight: 'bolder' }}>_______________________________________________</p><br />
-          <p style={{ marginLeft: '3vw' }}><b>Gender</b><br />Male</p>
-          <p style={{ margin: ' -3vw 0 0 16vw' }}><b>City</b><br />Karachi</p><br /><br /><br />
-          <p style={{ margin: '-2vw 0 0 3vw' }}><b>Last Active</b><br />24 hr ago</p><br /><br />
-          <p style={{ margin: ' -5vw 0 0 16vw' }}><b>Age</b><br />21 years old</p> <br /><br /><br />
-          <button style={{ marginLeft: '6vw', width: '10vw', height: '6vh', color: 'white', background: '#00acff', border: 'none', fontSize: '1vw' }}>Message Me</button>
+          <div className='user-email-name'>
+          <h2 style={{  fontWeight: 'bold', fontSize: '20px' }}>{auth.user.name}</h2>
+          <h3 style={{ color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}</h3> <br />
+          </div>
+          <p style={{ margin: '-2vh 0 0  3vw' }}><b>Gender</b><br />Male</p>
+          <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />Karachi</p><br /><br /><br />
+          <p style={{ margin: '-4vw 0 0 3vw' }}><b>Last Active</b><br />24 hr ago</p><br /><br />
+          <p style={{ margin: ' -7vw 0 0 16vw' }}><b>Age</b><br />21 years old</p> <br /><br /><br />
+          <button style={{ margin: '-4vh 0 0 6vw', width: '10vw', height: '6vh', color: 'white', background: '#00acff', border: 'none', fontSize: '1vw' }}>Message Me</button>
 
 
 
@@ -58,29 +57,23 @@ export default function Authenticated({ auth }) {
           <p style={{ marginTop: "4vh", marginLeft: "20vw" }}> Response Time <br /> 98%</p>
           <p style={{ marginTop: "-18.5vh", marginLeft: "35vw" }}>Order Given<br /> 6 </p>
           <p style={{ marginTop: "4vh", marginLeft: "35vw" }}> Repeat Hiring <br /> 8</p>
-          <p style={{ marginTop: "4vh", marginLeft: "20vw" }}>----------------------------------------------------</p>
-          <p style={{ marginTop: "4vh", marginLeft: "20vw" }}><FacebookIcon />&nbsp;&nbsp;<TwitterIcon />&nbsp;&nbsp;<InstagramIcon /></p>
+          <p style={{ marginTop: "2vh", marginLeft: "20vw" }}><FacebookIcon />&nbsp;&nbsp;<TwitterIcon />&nbsp;&nbsp;<InstagramIcon /></p>
 
         </div>
         <div className='ump-sub-sec3'>
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Repair's</h1>
-          <div className='RR-box rr1'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={mia} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store &nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
-            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
-
-          </div>
+          
           <div className='RR-box rr2'>
             &nbsp;&nbsp;&nbsp;<Avatar src={aksh} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
 
 
           </div>
           <div className='RR-box rr3'>
             &nbsp;&nbsp;&nbsp;<Avatar src={anum} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
-            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>techno Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@tec998</h3>
 
 
           </div>
@@ -88,20 +81,20 @@ export default function Authenticated({ auth }) {
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Scraper's</h1>
           <div className='Rs-box rs1'>
             &nbsp;&nbsp;&nbsp;<Avatar src={david} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
-            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>Ramzan Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@ramzan0909</h3>
 
           </div>
           <div className='Rs-box rs2'>
             &nbsp;&nbsp;&nbsp;<Avatar src={Samsung} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
-            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>The Shahs Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@Shah-998</h3>
 
           </div>
           <div className='Rs-box rs3'>
             &nbsp;&nbsp;&nbsp;<Avatar src={kho} round size='3.5vw' />
-            <h2 style={{ marginTop: "-5vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
-            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>AL-Amn Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Amn</h3>
 
           </div>
         </div>
@@ -128,19 +121,14 @@ export default function Authenticated({ auth }) {
         <div className='ump-sub-sec6'>
           <h1 >Reviews</h1>
           <div className='rew'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={tabish} round size='3.6vw' style={{ float: 'left' }} />
-            <h4 style={{ marginLeft: '2vw' }}>NAME </h4> <h5 style={{ color: '#a0a0a0' }}>Gmail</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse quaerat repudiandae totam similique eos.</p>
+             <p>Comment : The experience was outstanding.<br/>Name:Tabish Khan, Gmail:tabish@gmail.com
+             </p>
+           
           </div>
           <div className='rew'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={amjad} round size='3.6vw' style={{ float: 'left' }} />
-            <h4 style={{ marginLeft: '2vw' }}>NAME </h4> <h5 style={{ color: '#a0a0a0' }}>Gmail</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse quaerat repudiandae totam similique eos.</p>
-          </div>
-          <div className='rew'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={alisha} round size='3.6vw' style={{ float: 'left' }} />
-            <h4 style={{ marginLeft: '2vw' }}>NAME </h4> <h5 style={{ color: '#a0a0a0' }}>Gmail</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse quaerat repudiandae totam similique eos.</p>
+          <p>Comment : Amazing.<br/>Name:nazish ali, Gmail:nazish@gmail.com
+             </p>
+            
           </div>
         </div>
 
