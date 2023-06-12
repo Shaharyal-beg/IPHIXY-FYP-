@@ -1,20 +1,31 @@
 .jp_main{
     width: 100vw;
-    height: 100vh;
+    background-color: #EFEFEF;
+    height: auto;
     
 }
-.jp-main-page{
-    width: 100vw;
-    height: 90vw;
-    background-color: #EFEFEF;
-    padding-top: 8vh;
-}
-.jp-sub-page{
-    width: 80vw;
-    height: 168vh;
-    margin-left: 10vw;
+.jp-form-area{
+    width: 60vw;
+    height: 140vh;
+    margin-left: 20vw;
     background-color: white;
+    margin-top: 5vh;
+    padding: 4vw;
+    border: 1 px solid #7C7C7C;
+    
 }
-label{
-    font-weight: bolder;
+.jp-form-area-head{
+    padding: 2vh;
+    font-size: 30px;
+    color: #7C7C7C;
+    border-bottom: 1px solid #7C7C7C;
+
+}
+.post-button{
+     background-color: #00ACFF;
+     color: white;
+     border-radius: 10px;
+     width: 7vw;
+     height: 4vh;
+
 }

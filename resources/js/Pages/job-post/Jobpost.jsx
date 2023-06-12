@@ -1,43 +1,102 @@
 import React from 'react'
-import { Lastfooter, Navbar2 } from '../../components'
+import { Lastfooter, Navbar2,ImageUpload } from '../../Components'
 import Footer from '../footer/Footer'
 import "./job-post.css"
+import { useState } from 'react'
 import { Head } from '@inertiajs/react'
+import { router } from '@inertiajs/react'
 
 
 const Jobpost = () => {
+  // const [values, setValues] = useState({
+  //   productname: "",
+  //   area: "",
+  //   jobtype:"",
+  //   date:"",
+  //   bidprice:"",
+  //   note:"",
+  //   description:"",
+  //   image:null
+
+  // })
+  // function handleChange(e) {
+  //   const key = e.target.id;
+  //   const value = e.target.value
+  //   setValues(values => ({
+  //       ...values,
+  //       [key]: value,
+  //   }))
+  // }
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   router.post('/post-job', values)
+    
+  // }
+  const [formData, setFormData] = useState({
+    productname: '',
+    area: '',
+    jobtype: '',
+    date: '',
+    bidprice: '',
+    note: '',
+    description: '',
+    image: null,
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      image: file,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    router.post('/post-job', formData)
+    console.log(formData);
+  };
   return (
     <div className='jp_main'>
       <Head title="PostaJob" />
         <Navbar2/>
-        <div className='jp-main-page'>
-          <div className='jp-sub-page' >
-          <h1 style={{float:'left',margin:'3vh 0 0 2vw',fontSize:'3vw',color:'#7C7C7C'}}>Post a Job</h1>
-        <button style={{margin:'6vh 0 0 55vw',backgroundColor:'#007DBA',border:'1px solid white',color:'white',width:'4vw',height:'4vh',borderRadius:'5px'}}>Time</button> <br />
-        <div className='divider-ep' style={{width:'80vw',height:'4px',marginTop:'2.5vh'}}>
-         </div><br /><br />
-         <button style={{marginLeft:'35vw',backgroundColor:'#D9D9D9',border:'1px solid white',color:'#A0A0A0',width:'5vw',height:'5vh',borderRadius:'5px'}}>Repair</button>
-         <button style={{marginLeft:"-0.35vw",backgroundColor:'#00ACFF',border:'1px solid white',color:'white',width:'5vw',height:'5vh',borderRadius:'5px'}}>Sell</button><br /><br /><br />
-         <label style={{margin:' -2vh 5vw 0 2vw',float:'left'}}>Email Address</label><br /><br />
-         <label style={{margin:' -10.3vh 5vw 0 36vw',float:'left'}}>Product Name</label><br /><br />
-         <input className='ep_input' placeholder='Enter your Email' style={{width:'30vw',marginTop:'-6.5vh'}}></input>
-         <input className='ep_input' placeholder='Enter your products name' style={{width:'30vw',marginTop:'-6.5vh'}}></input><br /><br />
-         <label style={{marginLeft:'2vw'}}>Important Note</label><br />
-         <input className='ep_input' placeholder='Any important note' style={{width:'60vw'}}></input><br /><br /><br /><br /><br />
-      
-         <label style={{margin:'-5vh 0 0 2vw'}}>Job Description</label><br />
-         <input className='ep_input' placeholder='job Description' style={{width:'60vw',height:'30vh'}}></input><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-        
-         <button style={{marginLeft:'30vw',backgroundColor:'#D9D9D9',border:'1px solid white',color:'#A0A0A0',width:'7vw',height:'5vh',borderRadius:'5px'}}>Reset Job</button>
-         <button style={{backgroundColor:'#00ACFF',border:'1px solid white',color:'white',width:'7vw',height:'5vh',borderRadius:'5px'}}>Post Job</button><br /><br /><br />
-         
-
-          </div>
+        <div className='jp-form-area'>
+          <div className='jp-form-area-head'>
+          <h1>Post a job</h1>
+          </div><br/>
+          <form onSubmit={handleSubmit}>
+            <label className='label-small'>Product Name</label>
+            <label className='label-small'>Address</label><br/>
+            <input type='text' className='input-small' name='productname' placeholder='Product name' value={formData.productname} onChange={handleInputChange}/>
+            <input type='text' className='input-small' name='area' placeholder='area'value={formData.area} onChange={handleInputChange} /><br/>
+            <label className='label-small'>Job Title</label>
+            <label className='label-small'>Warranty Date</label><br/>
+            <input type='text' className='input-small' name='jobtype' placeholder='JOB TITLE' value={formData.jobtype} onChange={handleInputChange}/>
+            <input type='text' className='input-small' name='date' placeholder='warranty date'value={formData.date} onChange={handleInputChange} /><br/>
+            <label className='label-small'>Intial Bid Price</label>
+            <label className='label-small'>Any Note</label><br/>
+            <input type='text' className='input-small' name='bidprice' placeholder='Enter Bid Price' value={formData.bidprice} onChange={handleInputChange}/>
+            <input type='text' className='input-small' name='note' placeholder='Any important Note'value={formData.note} onChange={handleInputChange} /><br/><br/><br/><br/>
+            <br/><label>Description</label><br/>
+            <textarea name="description"  cols="70" rows="7"  placeholder='Any important Note'value={formData.description} onChange={handleInputChange}></textarea><br/><br/>
+            <label for="myfile">Select a Photo:</label><br/>
+            <input type="file" id="file" name="file" onChange={handleFileInputChange}></input><br/><br/>
+            {/* <ImageUpload/> */}
+            <button type='submit'className='post-button' onClick={handleSubmit}>POST</button>
+            </form>
         </div>
       <Footer/>
       <Lastfooter/>
     </div>
   )
 }
-
 export default Jobpost

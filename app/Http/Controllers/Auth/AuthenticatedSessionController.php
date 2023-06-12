@@ -35,19 +35,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
         $auth=Auth::user();
         // dd($auth);
-        if($auth->type=='4'){
-            return redirect(RouteServiceProvider::HOME);
-        }
-        elseif($auth->type=='3'){
-            return redirect('/dashboard-scrapper');
-        }
-        elseif($auth->type=='2'){
-            return redirect('/dashboard-repairer');
-        }
-        else{
-            return redirect('/dashboard');
-        }
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
     }
 
     /**

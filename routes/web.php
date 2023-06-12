@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\Auth\RegisteredUserController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,13 +43,13 @@ Route::get('/services', function () {
     return Inertia::render('service/Service');
 })->name('Services');
 Route::get('/edit-profile', function () {
-    return Inertia::render('edit-profile/EditProfile');
+    return Inertia::render('edit-profile/EditProfile',['auth'=>Auth::user()]);
 });
 Route::get('/post-job', function () {
-    return Inertia::render('job-post/Jobpost');
+    return Inertia::render('job-post/Jobpost',['auth'=>Auth::user()]);
 });
 Route::get('/jobs', function () {
-    return Inertia::render('repairer/Jobs');
+    return Inertia::render('jobs/Jobs');
 });
 Route::get('/dashboard-repairer', function () {
     return Inertia::render('repairer/Repairer');
@@ -56,5 +57,8 @@ Route::get('/dashboard-repairer', function () {
 Route::get('/dashboard-scrapper', function () {
     return Inertia::render('scraper/Scrap');
 });
+Route::post('/edit-profile',  [RegisteredUserController::class, 'edit_profile']);
+
+Route::post('/post-job',  [RegisteredUserController::class, 'post_job']);
 
 require __DIR__.'/auth.php';

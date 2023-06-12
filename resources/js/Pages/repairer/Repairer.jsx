@@ -1,5 +1,5 @@
 import React from 'react'
-import { Lastfooter, Navbar3 } from '../../components'
+import { Lastfooter, Navbar3 } from '../../Components'
 import '../edit-profile/edit-profile.css'
 import Avatar from 'react-avatar'
 import avatar1 from './ava1.jpg'

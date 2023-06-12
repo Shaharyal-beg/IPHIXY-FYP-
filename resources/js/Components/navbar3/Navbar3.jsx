@@ -17,11 +17,11 @@ const Navbar3 = () => {
         <img src={logo} alt="logo" />
         </div>
         <div className='ump-nav-list3'>
-            <ul>
+            <ul className='nav-item3'>
                 <li style={{marginTop:'3vh'}}> <ModeEditIcon/> <a href="/edit-profile">Edit Profile</a> </li>
                 <li><AddBoxIcon/> <a href="/jobs">Jobs</a></li>
                 <li><ChatIcon/> <a href='/chat'> Chat</a></li>
-                <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'black'}}/></li>
+                {/* <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'black'}}/></li> */}
                 <li style={{marginRight:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
                 </ul>
                 

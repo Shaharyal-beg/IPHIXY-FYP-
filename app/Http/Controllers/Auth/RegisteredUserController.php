@@ -23,6 +23,67 @@ class RegisteredUserController extends Controller
     {
         return Inertia::render('Auth/Register');
     }
+    public function update(Request $request)
+    {
+        $user=Auth::user();
+        $request->validate([
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|string|email|max:255|unique:'.User::class,
+            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'dob' => 'nullable|max:255',
+            'city' => 'nullable|string|max:255',
+        ]);
+        $update=[];
+        if(!empty($request->password))
+        {
+            $update['password'] = Hash::make($request->password);
+        }
+        if(!empty($request->name))
+        {
+            $update['name'] = $request->name;
+        }
+        if(!empty($request->email))
+        {
+            $update['email'] = $request->email;
+        }
+        if(!empty($request->city))
+        {
+            $update['city'] = $request->city;
+        }
+        if(!empty($request->dob))
+        {
+            $update['dob'] = $request->dob;
+        }
+        // if(!empty($request->gender))
+        // {
+        //     $update['gender'] = $request->gender;
+        // }
+            $user->update($update);
+        return redirect('/dashboard');
+        
+
+    }
+    public function storeAvatar(Request $request)
+    {
+
+        $request->validate([
+            'image' => 'required|image',
+        ]);
+  
+        $image = $request->file('image');
+
+        if ($image) {
+            // Store the image in your desired location
+            $path = $image->store('images', 'public');
+            Auth::user()->update([
+                'avatar'=>$path,
+            ]);
+            
+            return redirect('/dashboard');
+        }
+        
+        return redirect('/dashboard');
+    }
 
     /**
      * Handle an incoming registration request.
@@ -35,6 +96,7 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:'.User::class,
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'type'=>'required',
         ]);
 
         $user = User::create([
@@ -48,19 +110,38 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        if($user->type=='4'){
-            return redirect(RouteServiceProvider::HOME);
-        }
-        elseif($user->type=='3'){
-            return redirect('/dashboard-scrapper');
-        }
-        elseif($user->type=='2'){
-            return redirect('/dashboard-repairer');
-        }
-        else{
-            return redirect('/dashboard');
-        }
+        return redirect('/dashboard');
+    
+    }
+    public function edit_profile(Request $request){
+        
+        $request->validate([
+            'institute'=>'required',
+            'degree'=>'required',
+            'company'=>'required',
+            'position'=>'required',
+            'detail'=>'required',
+            'estartdate'=>'required',
+            'eenddate'=>'required',
+            'wstartdate'=>'required',
+            'wenddate'=>'required'
+        ]);
+        $request->user()->update([
+            'institute_uni'=>$request->institute,
+            'degree_name'=>$request->degree,
+            'uni_start'=>$request->estartdate,
+            'detail'=>$request->detail,
+            'uni_end'=>$request->eenddate,
+            'institute_job'=>$request->company,
+            'position_name'=>$request->position,
+            'job_start'=>$request->wstartdate,
+            'job_end'=>$request->wenddate,
+        ]);
+        $user=$request->user();
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/dashboard');
+    }
+    public function post_job(Request $request){
+        dd($request);
     }
 }

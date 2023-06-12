@@ -14,13 +14,19 @@
     float: left;
     margin-top: 1.3vh;
     margin-left: 4vw;
-    
-    
+    float: left; 
 }
 .logo,img{
     width: 18vw;
     height: 7vh;
     margin-bottom: 2vh;
-    z-index: 3;
-    
+    z-index: 3;  
+    margin-right: 8vw;
+    margin-left: 2vw;
+}
+.logo-nav2{
+    float: left;
+}
+.ump-nav-list2 li{
+    margin: 0 0 0 5vw;
 }

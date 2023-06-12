@@ -2,6 +2,7 @@ import React from 'react'
 import './user.css'
 import Avatar from 'react-avatar';
 import avatar1 from './ava1.jpg';
+import ava from './ava1.jpg'
 import aksh from './aksh.jpg';
 import anum from './anum.jpg';
 import david from './david.jpg';
@@ -23,55 +24,51 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import StarIcon from '@mui/icons-material/Star';
 import white_logo from './Iphixy_white.png'
 import Footer from '../footer/Footer';
-import { Lastfooter, Navbar2 } from '../../components';
+import { Lastfooter, Navbar2 ,Main_nav } from '../../Components';
 import { Head } from '@inertiajs/react';
 
 export default function Authenticated({ auth }) {
+  var profile_picture= auth.user.avatar !== null ? `/storage/${auth.user.avatar}`:ava;
+  console.log(auth)
   return (
 
     <div className='user-mp'>
       <Head title="Dashboard" />
-      <Navbar2 />
+      <Main_nav props={auth.user}/>
       <div className='ump-main-sec'>
         <div className='ump-sub-sec1'>
           <MoreHorizIcon style={{ marginLeft: '23.5vw' }} />
-          <Avatar src={david} round size='9vw' style={{ marginLeft: '8vw' }} /> <br /><br />
+          <Avatar src={profile_picture} round size='9vw' style={{ marginLeft: '6vw' }} /> <br /><br />
           <div className='user-email-name'>
           <h2 style={{  fontWeight: 'bold', fontSize: '20px' }}>{auth.user.name}</h2>
           <h3 style={{ color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}</h3> <br />
           </div>
           <p style={{ margin: '-2vh 0 0  3vw' }}><b>Gender</b><br />Male</p>
-          <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />Karachi</p><br /><br /><br />
+          <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />{auth.user.city}</p><br /><br /><br />
           <p style={{ margin: '-4vw 0 0 3vw' }}><b>Last Active</b><br />24 hr ago</p><br /><br />
           <p style={{ margin: ' -7vw 0 0 16vw' }}><b>Age</b><br />21 years old</p> <br /><br /><br />
           <button style={{ margin: '-4vh 0 0 6vw', width: '10vw', height: '6vh', color: 'white', background: '#00acff', border: 'none', fontSize: '1vw' }}>Message Me</button>
-
-
-
+          
         </div>
         <div className='ump-sub-sec2'>
           <img src={white_logo} alt="logo" className='w_logo' />
-          <p style={{ margin: "2vw" }}>Works For <br /> RawTech Digital </p><br />
-          <p style={{ margin: "2vw", marginTop: "-3vh" }}>Joining Date <br />12-dec-2001</p>
-          <p style={{ marginTop: "-30vh", marginLeft: "20vw" }}>Availability <br /> 36 hours\week</p>
-          <p style={{ marginTop: "4vh", marginLeft: "20vw" }}> Response Time <br /> 98%</p>
-          <p style={{ marginTop: "-18.5vh", marginLeft: "35vw" }}>Order Given<br /> 6 </p>
-          <p style={{ marginTop: "4vh", marginLeft: "35vw" }}> Repeat Hiring <br /> 8</p>
-          <p style={{ marginTop: "2vh", marginLeft: "20vw" }}><FacebookIcon />&nbsp;&nbsp;<TwitterIcon />&nbsp;&nbsp;<InstagramIcon /></p>
+          <p style={{ margin: "6vh 0 0 5vw" }}>Works For <br /> RawTech Digital </p>
+          <p style={{ margin: "6vh 0 0 5vw" }}>Joining Date <br />{auth.user.created_at}</p>
+          
 
         </div>
         <div className='ump-sub-sec3'>
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Repair's</h1>
           
           <div className='RR-box rr2'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={aksh} round size='3.5vw' />
+            <Avatar src={aksh} round size='3.5vw' />
             <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>AL-Naz Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Naz998</h3>
 
 
           </div>
           <div className='RR-box rr3'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={anum} round size='3.5vw' />
+            <Avatar src={anum} round size='3.5vw' />
             <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>techno Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@tec998</h3>
 
@@ -80,58 +77,62 @@ export default function Authenticated({ auth }) {
           <br />
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Scraper's</h1>
           <div className='Rs-box rs1'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={david} round size='3.5vw' />
+            <Avatar src={david} round size='3.5vw' />
             <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>Ramzan Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@ramzan0909</h3>
 
           </div>
           <div className='Rs-box rs2'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={Samsung} round size='3.5vw' />
+            <Avatar src={Samsung} round size='3.5vw' />
             <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>The Shahs Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@Shah-998</h3>
 
           </div>
           <div className='Rs-box rs3'>
-            &nbsp;&nbsp;&nbsp;<Avatar src={kho} round size='3.5vw' />
+            <Avatar src={kho} round size='3.5vw' />
             <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>AL-Amn Store&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>@AL-Amn</h3>
 
           </div>
         </div>
         <div className='ump-sub-sec4'>
-          <h2><a href='#' style={{ color: '#00acff' }} >Profile</a> &nbsp;&nbsp;&nbsp; <a href="#" style={{ color: '#a0a0a0' }}>About</a></h2>
+          <h2><a href='#' style={{ color: '#00acff' }} >Profile</a>  <a href="#" style={{ color: '#a0a0a0' }}>About</a></h2>
         </div>
         <div className='ump-sub-sec5'>
-          <h1 style={{fontWeight:'bold',fontSize:'1.3vw'}}>About ME</h1><br />
-          <p style={{fontSize:'0.9vw'}}>I entered the field of content writing in 2010, driven by a passion for quality content creation. I managed several projects single-handedly which were published on reputed platforms on the web. I gained much experience while completing projects, and I decided to create my own venture. Sensing the demand for quality creative services that had the power to transform the web space, I incorporated SEOPage1 in 2013. <br />
-
-            Over time, SEOPAGE1 has broadened the domain of its services into the following fields: <br />
-
-            Content Writing<br />
-            Web Designing<br />
-            Developing Graphics Design<br />
-            Search Engine Optimization<br />
-
-            How did we become successful?<br />
-
-            • We created a team of 50 writers, web developers, Graphics designers and marketers in our office located in Dhaka, Bangladesh.<br />
-            • Enforced stringent quality checks on the content produced by our team members.<br />
-            • Formed a pool of researchers with the necessary expertise in various fields to offer dynamic, insightful and well-researched end products to our clients.</p>
+          <h1 style={{fontWeight:'bold',fontSize:'1.3vw'}}>About ME</h1><br></br>
+          <p style={{fontSize:'0.9vw'}}>
+          <h1 style={{fontWeight:'bold',fontSize:'1.3vw'}}>Education</h1>
+          <p> <b>Institue Name:</b> {auth.user.institute_uni} </p>
+          <p> <b>Degree Name: </b>{auth.user.degree_name}</p>  
+          <p><b>Start Date : </b>{auth.user.uni_start}</p>  
+          <p><b>End Date : </b>{auth.user.uni_end} </p>  <br/>
+            <h1 style={{fontWeight:'bold',fontSize:'1.3vw'}}>Experience</h1>
+            <p><b>Institute Name : </b>{auth.user.institute_job}</p>
+            <p><b>Position : </b>{auth.user.position_name}</p>
+            <p><b>Job Start date : </b>{auth.user.job_start}</p>
+            <p><b>Job End date : </b>{auth.user.job_end}</p>
+            <p><b>Detail : </b>{auth.user.detail}</p>
+          </p>
         </div>
-        <div className='ump-sub-sec6'>
-          <h1 >Reviews</h1>
-          <div className='rew'>
-             <p>Comment : The experience was outstanding.<br/>Name:Tabish Khan, Gmail:tabish@gmail.com
-             </p>
-           
+        <div className='posts'>
+          <h1>Posts</h1><br/>
+          <div className='post-description'>
+           <h4>Product Despcription</h4>
+           <h5>Product Name: Mobile phone Job Title: Screen repairing</h5>
+           <h5>Area: Nazimabad Warranty   Date: 2,nov,2023</h5>
+           <h5>IntialBid Price: 50000    Any Note:Jeck is repaired</h5>
+           <h5>DESCRIPTION: Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam, sequi quam totam esse dolorum suscipit non. Mollitia necessitatibus qui iure fugiat sint minima, quo hic atque accusamus et veniam.</h5>
           </div>
-          <div className='rew'>
-          <p>Comment : Amazing.<br/>Name:nazish ali, Gmail:nazish@gmail.com
-             </p>
-            
+          <div className='post-image'>
+           Image
+          </div>
+          <div className='post-bids'>
+           <div className='user-bid'>user1  : bid 1</div> <br/>
+           <div className='user-bid'>user2 : bid 2</div> <br/>
+           <div className='user-bid'>user3 : bid3</div> <br/>
           </div>
         </div>
-
+        
       </div>
       <Footer />
       <Lastfooter />
