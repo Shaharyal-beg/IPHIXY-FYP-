@@ -88,6 +88,7 @@
     height: auto;
     background-color: lightgray;
     margin: 3vh 0 0 40vw;
+    border: 1px solid black;
 }
 .posts h1{
     font-size: 25px;
@@ -102,10 +103,22 @@
     padding:1vh 1vw;
     font-size: 13px;
 }
+.post-descriptionAndImage{
+    border: 2px solid black;
+    width: 60vw;
+    height: 90vh;
+    align-items: center;
+    margin: 5vh 0 0 20vw;
+}
 .post-image{
     width: 50vw;
-    height: 50vh;
+    height: 40vh;
     background-color: white;
+}
+.post-image img{
+    width: 40vw;
+    height: 40vh;
+    margin: 5vh 0 0 5vw;
 }
 .post-bid{
     width: 50vw;
@@ -164,5 +177,10 @@
     padding: 0;
     border: 1px solid black;
 }
-
+.bidsForUsersPost{
+    width: 50vw;
+    height: 5vh;
+    border: 1px solid black;
+    margin: 4vh 0 0 0;
+}
 

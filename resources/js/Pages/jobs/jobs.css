@@ -73,3 +73,8 @@
     float: left;
 
 }
+.rs-bidarea{
+    margin: 2vh 0 0 5vw;
+    width: 40vw;
+    height: 10vh;
+}

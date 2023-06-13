@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +28,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('user/User');
+    return Inertia::render('user/User',['posts'=>Auth::user()->posts()->with('bids.user')->get(),]);
 })->middleware('auth')->name('dashboard');
 
 // Route::middleware('auth')->group(function () {
@@ -45,11 +46,18 @@ Route::get('/services', function () {
 Route::get('/edit-profile', function () {
     return Inertia::render('edit-profile/EditProfile',['auth'=>Auth::user()]);
 });
+Route::get('/post/{id}', function (string $id) {
+
+    $post=Post::find($id);
+    return Inertia::render('job-page/jobPage',['post'=>$post]);
+});
+
+Route::post('/bid/{id}', [RegisteredUserController::class, 'post_bid']);
 Route::get('/post-job', function () {
     return Inertia::render('job-post/Jobpost',['auth'=>Auth::user()]);
 });
 Route::get('/jobs', function () {
-    return Inertia::render('jobs/Jobs');
+    return Inertia::render('jobs/Jobs',['posts'=>Post::latest()->get()]);
 });
 Route::get('/dashboard-repairer', function () {
     return Inertia::render('repairer/Repairer');

@@ -81,7 +81,7 @@ const Jobpost = () => {
             <label className='label-small'>Job Title</label>
             <label className='label-small'>Warranty Date</label><br/>
             <input type='text' className='input-small' name='jobtype' placeholder='JOB TITLE' value={formData.jobtype} onChange={handleInputChange}/>
-            <input type='text' className='input-small' name='date' placeholder='warranty date'value={formData.date} onChange={handleInputChange} /><br/>
+            <input type='date' className='input-small' name='date' placeholder='warranty date'value={formData.date} onChange={handleInputChange} /><br/>
             <label className='label-small'>Intial Bid Price</label>
             <label className='label-small'>Any Note</label><br/>
             <input type='text' className='input-small' name='bidprice' placeholder='Enter Bid Price' value={formData.bidprice} onChange={handleInputChange}/>

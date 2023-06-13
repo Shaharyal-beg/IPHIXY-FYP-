@@ -27,9 +27,41 @@ import Footer from '../footer/Footer';
 import { Lastfooter, Navbar2 ,Main_nav } from '../../Components';
 import { Head } from '@inertiajs/react';
 
-export default function Authenticated({ auth }) {
+export default function Authenticated({ auth,posts }) {
   var profile_picture= auth.user.avatar !== null ? `/storage/${auth.user.avatar}`:ava;
-  console.log(auth)
+
+  let postsList = [];
+
+  posts.forEach((post, index) => {
+    let bidlist=[];
+    post.bids.forEach(bid => {
+      console.log(post)
+      bidlist.push(
+        <div className='bidsForUsersPost'>
+          <p>Name:{bid.user.name}<br/>Email:{bid.user.email}<br></br>Bid amount:{bid.bid_price}</p><br></br>
+       
+       </div>
+      )
+       
+    })
+    
+    postsList.push(<div className='post-descriptionAndImage'>
+    <div className='post-description'>
+    <h4>Product Despcription</h4>
+    <h5>Product Name: {post.productname} Job Title: Screen repairing</h5>
+    <h5>Area: {post.area}   Warranty Date: {post.w_date}</h5>
+    <h5>IntialBid Price: {post.bid_price}   Any Note:{post.note}</h5>
+    <h5>DESCRIPTION: {post.description}</h5>
+   </div>
+   <div className='post-image'>
+    <img src={`/storage/${post.image_path}`} alt="" srcset="" />
+    
+   </div>
+   
+   <h3>Bids:</h3>
+   {bidlist}
+   </div>);
+  });
   return (
 
     <div className='user-mp'>
@@ -115,8 +147,25 @@ export default function Authenticated({ auth }) {
           </p>
         </div>
         <div className='posts'>
-          <h1>Posts</h1><br/>
-          <div className='post-description'>
+          <h1>Posts</h1>
+          {/* {posts.forEach((post, index) => {
+
+              <div className='post-descriptionAndImage'>
+              <div className='post-description'>
+              <h4>Product Despcription</h4>
+              <h5>Product Name: {post.productname} Job Title: Screen repairing</h5>
+              <h5>Area: {post.area}   Warranty Date: {post.w_date}</h5>
+              <h5>IntialBid Price: {post.bid_price}   Any Note:{post.note}</h5>
+              <h5>DESCRIPTION: {post.description}</h5>
+             </div>
+             <div className='post-image'>
+              <img src={`/storage/${post.image_path}`} alt="" srcset="" />
+             </div>
+             </div>
+          })} */}
+           {postsList}
+          
+          {/* <div className='post-description'>
            <h4>Product Despcription</h4>
            <h5>Product Name: Mobile phone Job Title: Screen repairing</h5>
            <h5>Area: Nazimabad Warranty   Date: 2,nov,2023</h5>
@@ -125,12 +174,8 @@ export default function Authenticated({ auth }) {
           </div>
           <div className='post-image'>
            Image
-          </div>
-          <div className='post-bids'>
-           <div className='user-bid'>user1  : bid 1</div> <br/>
-           <div className='user-bid'>user2 : bid 2</div> <br/>
-           <div className='user-bid'>user3 : bid3</div> <br/>
-          </div>
+          </div> */}
+          
         </div>
         
       </div>

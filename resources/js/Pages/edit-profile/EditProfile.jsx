@@ -145,10 +145,10 @@ const EditProfile = (auth) => {
             <label>Gender</label><br/>
             <input type='text' className='input-small' placeholder='Gender' id='gender' value={values.gender} onChange={handleChange}/><br/><br/>
             <button type='submit' onClick={handleSubmit1}>Submit</button>
-            </form>__
-            <form onSubmit={handleSubmit}>_____
+            </form>
+            <form onSubmit={handleSubmit}>
             <h2>About____________________________
-              </h2><br/><br/>_
+              </h2><br/><br/>
             <h3>Education</h3><br/>
             <input type='text' className='input-long' placeholder='Name of institute' id='institute' value={values.institute} onChange={handleChange}/><br/>
             <input type='text' className='input-long' placeholder='Degree Name' id='degree' value={values.degree} onChange={handleChange}/><br/>

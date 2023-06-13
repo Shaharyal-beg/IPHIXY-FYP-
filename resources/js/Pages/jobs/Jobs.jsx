@@ -5,167 +5,45 @@ import StarIcon from '@mui/icons-material/Star';
 import { Footer } from '..'
 import "./jobs.css"
 
-const Jobs = () => {
+const Jobs = (posts) => {
+  console.log(posts.posts)
+  let postsList = [];
+  var posts1=posts.posts;
+
+  
+
+  posts1.forEach((post, index) => {
+    postsList.push(<div className='post-descriptionAndImage'>
+    <div className='post-description'>
+    <h4>Product Despcription</h4>
+    <h5>Product Name: {post.productname} <br/>Job Title: Screen repairing</h5>
+    <h5>Area: {post.area}   <br/>Warranty Date: {post.w_date}</h5>
+    <h5>IntialBid Price: {post.bid_price}  <br/> Any Note:{post.note}</h5>
+    <h5>DESCRIPTION: {post.description}</h5>
+   </div>
+   <div className='post-image'>
+    <img src={`/storage/${post.image_path}`} alt="" srcset="" />
+   </div>
+   {/* <div className='rs-bidarea'>
+    <form>
+   <input type='text' placeholder='enter your bid here'/>
+   <button>submit</button>
+   </form>
+   </div> */}
+   <a href={`/post/${post.id}`}>Goto bid</a>
+   </div>);
+  });
   return (
     <div className='jobs-mp'>
       <Navbar3/>
-      <div className='first-con'>
-        <div className='selection-box'>
-        <label style={{color:'#727171'}}>City</label><br />
-        
-        <select name="city" id="select-box">
-          <option className='selectbox' value="karachi">karachi</option>
-        </select>
-        </div>
-        <div className='selection-box'>
-        <label style={{color:'#727171'}}>Time</label><br />
-        <select name="city" id="select-box">
-          <option className='selectbox' value="karachi">00:00</option>
-        </select>
-        </div>
-        <div className='selection-box'>
-        <label style={{color:'#727171'}}>Bid Price</label><br />
-        <select name="city" id="select-box">
-          <option className='selectbox' value="karachi">1000</option>
-        </select>
-        </div>
-      </div>
-      <div className='jobs-subpage'>
-      <div className='jobs-subcon'>
-        <div className='img-subcon'>
-          <img className='product-pic' src={product} alt="" />
-
-        </div>
-        <div className='content-subcon'>
-          <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-          <p>Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-
-        </div>
-
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-       </div>
-       <div className='content-subcon'>
-       <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-       </div>
-       <div className='content-subcon'>
-       <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-       </div>
-       <div className='content-subcon'>
-       <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-       </div>
-      <div className='bid-area'>
-        <br />
-      <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-       </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-      </div>
-      <div className='content-subcon'>
-      <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-      </div>
-      <div className='content-subcon'>
-      <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-      </div>
-      <div className='content-subcon'>
-      <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-      </div>
-      <div className='content-subcon'>
-      <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
-      </div>
-      <div className='jobs-subcon'>
-      <div className='img-subcon'>
-      <img className='product-pic' src={product} alt="" />
-      </div>
-      <div className='content-subcon'>
-      <p><b>Product Name:</b><br />Warranty Date: <br />Rating:<StarIcon/><StarIcon/><StarIcon/><StarIcon/><StarIcon/> </p><br />
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit nam distinctio dolorum corporis repellendus architecto! Laudantium asperiores nisi ea a, fugiat dolor temporibus nesciunt culpa?</p><br />
-          <p><b>NOTE:</b>Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
-        </div>
-        <div className='bid-area'>
-          <br />
-        <p>&nbsp;Rs:60000 <button style={{color:"#00ACFF",background:'white',marginLeft:'10vw',width:'5vw'}}>BID NOW</button></p>
-        </div>
+      <div className='posts-area'>
+      {postsList}
       </div>
       
-      </div> 
+
       <Footer/>
       <Lastfooter/>
-        </div>
+    </div>
   )
 }
 

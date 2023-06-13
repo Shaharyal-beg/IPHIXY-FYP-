@@ -9,4 +9,5 @@ export {default as Jobpost} from './job-post/Jobpost'
 export {default as Jobs} from './jobs/Jobs'
 export {default as Chat} from './chat/chat'
 export {default as Repairer} from './repairer/Repairer'
+export {default as jobPage} from './job-page/jobPage'
 
