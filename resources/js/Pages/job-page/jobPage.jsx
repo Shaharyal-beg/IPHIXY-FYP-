@@ -30,6 +30,9 @@ const jobPage = (post,auth) => {
     <div className='jobPage-1'>
         <Main_nav props={post1.auth.user} />
         <div className='post-descriptionAndImage'>
+        <div className='post-head'>
+        <h1><b>Users Name</b> <br/> Date/Time</h1>
+      </div>
     <div className='post-description'>
     <h4>Product Despcription</h4>
     <h5>Product Name: {post.productname} <br/>Job Title: Screen repairing</h5>
@@ -43,7 +46,7 @@ const jobPage = (post,auth) => {
    <div className='rs-bidarea'>
     <form onSubmit={handleSubmit}>
    <input type='number' id='bidAmount' value={values.bidAmount} placeholder='enter your bid here'  onChange={handleChange}/>
-   <button type='submit'>submit</button>
+   <button type='submit' className='goto-but'>submit</button>
    </form>
    </div>
        </div>

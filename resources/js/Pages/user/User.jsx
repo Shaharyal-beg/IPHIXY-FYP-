@@ -48,17 +48,18 @@ export default function Authenticated({ auth,posts }) {
     postsList.push(<div className='post-descriptionAndImage'>
     <div className='post-description'>
     <h4>Product Despcription</h4>
-    <h5>Product Name: {post.productname} Job Title: Screen repairing</h5>
-    <h5>Area: {post.area}   Warranty Date: {post.w_date}</h5>
-    <h5>IntialBid Price: {post.bid_price}   Any Note:{post.note}</h5>
-    <h5>DESCRIPTION: {post.description}</h5>
+    <h5><b>Product Name:</b> {post.productname} <br/> <b>Job Title:</b> Screen repairing</h5>
+    <h5><b>Area:</b> {post.area} <br/>  <b>Warranty Date:</b> {post.w_date}</h5>
+    <h5><b>IntialBid Price:</b> {post.bid_price}  <br/> <b>Any Note:</b>{post.note}</h5>
+    <h5><b>DESCRIPTION:</b> {post.description}</h5>
    </div>
    <div className='post-image'>
+    <h4>Product Image</h4>
     <img src={`/storage/${post.image_path}`} alt="" srcset="" />
     
    </div>
    
-   <h3>Bids:</h3>
+   <h3 style={{padding:'2vh'}}>Bids:</h3>
    {bidlist}
    </div>);
   });

@@ -8,10 +8,11 @@
 }
 .ump-main-sec{
     width: 100vw;
-    height:auto;
+    height: auto;
     background: linear-gradient(to bottom, lightgrey 40%, white 100%);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     padding-top: 12vh;
+    padding-bottom: 5vh;
 }
 .ump-sub-sec1{
     width: 25vw;
@@ -88,7 +89,7 @@
     height: auto;
     background-color: lightgray;
     margin: 3vh 0 0 40vw;
-    border: 1px solid black;
+    padding-bottom: 3vh;
 }
 .posts h1{
     font-size: 25px;
@@ -97,28 +98,28 @@
 }
 
 .post-description{
-    width: 50vw;
+    width: 44.6vw;
     height: auto;
     background-color: white;
     padding:1vh 1vw;
-    font-size: 13px;
+    font-size: 15px;
+
 }
 .post-descriptionAndImage{
     border: 2px solid black;
-    width: 60vw;
-    height: 90vh;
+    width: 45vw;
+    height: auto;
     align-items: center;
-    margin: 5vh 0 0 20vw;
+    margin: 5vh 0 0 2.5vw;
 }
 .post-image{
-    width: 50vw;
-    height: 40vh;
-    background-color: white;
+    width: 35vw;
+    height: 45vh;
 }
 .post-image img{
-    width: 40vw;
-    height: 40vh;
-    margin: 5vh 0 0 5vw;
+    width: 35vw;
+    height: 35vh;
+    margin: 2vh 0 0 5vw;
 }
 .post-bid{
     width: 50vw;
@@ -178,9 +179,11 @@
     border: 1px solid black;
 }
 .bidsForUsersPost{
-    width: 50vw;
-    height: 5vh;
-    border: 1px solid black;
-    margin: 4vh 0 0 0;
+    width: 40vw;
+    height: 12vh;
+    background-color: #00ACFF;
+    color: white;
+    margin: 0 0 1vh 1vw;
+    font-weight: 400;
 }
 

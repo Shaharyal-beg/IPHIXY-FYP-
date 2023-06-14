@@ -13,7 +13,10 @@ const Jobs = (posts) => {
   
 
   posts1.forEach((post, index) => {
-    postsList.push(<div className='post-descriptionAndImage'>
+    postsList.push(<div className='post-descriptionAndImage postsInJobPage'>
+      <div className='post-head'>
+        <h1><b>Users Name</b> <br/> Date/Time</h1>
+      </div>
     <div className='post-description'>
     <h4>Product Despcription</h4>
     <h5>Product Name: {post.productname} <br/>Job Title: Screen repairing</h5>
@@ -30,7 +33,7 @@ const Jobs = (posts) => {
    <button>submit</button>
    </form>
    </div> */}
-   <a href={`/post/${post.id}`}>Goto bid</a>
+   <button className='goto-but'><a href={`/post/${post.id}`}>Goto bid</a></button>
    </div>);
   });
   return (
@@ -40,10 +43,8 @@ const Jobs = (posts) => {
       {postsList}
       </div>
       
-
-      <Footer/>
-      <Lastfooter/>
     </div>
+    
   )
 }
 

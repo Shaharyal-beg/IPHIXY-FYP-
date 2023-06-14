@@ -78,3 +78,23 @@
     width: 40vw;
     height: 10vh;
 }
+.goto-but{
+    width: 7vw;
+    height: 5vh;
+    background-color: #00ACFF;
+    color: white;
+    border-radius: 10px;
+    margin: 0 0 1vh 18vw
+}
+.post-head{
+    background-color: #00ACFF;
+    color: white;
+    padding: 2vh 2vw;
+}
+.posts-area{
+    width: 100vw;
+    height: auto;
+}
+.postsInJobPage{
+    float: left;
+}

@@ -147,8 +147,7 @@ const EditProfile = (auth) => {
             <button type='submit' onClick={handleSubmit1}>Submit</button>
             </form>
             <form onSubmit={handleSubmit}>
-            <h2>About____________________________
-              </h2><br/><br/>
+            <h2>About</h2><br/><br/>
             <h3>Education</h3><br/>
             <input type='text' className='input-long' placeholder='Name of institute' id='institute' value={values.institute} onChange={handleChange}/><br/>
             <input type='text' className='input-long' placeholder='Degree Name' id='degree' value={values.degree} onChange={handleChange}/><br/>
