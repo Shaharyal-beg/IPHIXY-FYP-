@@ -30,6 +30,12 @@ import { Head } from '@inertiajs/react';
 export default function Authenticated({ auth,posts }) {
   var profile_picture= auth.user.avatar !== null ? `/storage/${auth.user.avatar}`:ava;
 
+  var date=new Date(auth.user.created_at)
+  console.log(date)
+  var dateofmont=date.getDate()
+  var month=date.getMonth()
+  var year=date.getFullYear()
+  var joiningdate=new Date(`${dateofmont} ${month},${year}`)
   let postsList = [];
 
   posts.forEach((post, index) => {
@@ -85,8 +91,8 @@ export default function Authenticated({ auth,posts }) {
         </div>
         <div className='ump-sub-sec2'>
           <img src={white_logo} alt="logo" className='w_logo' />
-          <p style={{ margin: "6vh 0 0 5vw" }}>Works For <br /> RawTech Digital </p>
-          <p style={{ margin: "6vh 0 0 5vw" }}>Joining Date <br />{auth.user.created_at}</p>
+          <p style={{ margin: "6vh 0 0 5vw" }}>Works For <br />{{auth.user.institute_job}} </p>
+          <p style={{ margin: "6vh 0 0 5vw" }}>Joining Date <br />{`${dateofmont} ${month},${year}`}</p>
           
 
         </div>
