@@ -44,7 +44,10 @@ Route::get('/services', function () {
     return Inertia::render('service/Service');
 })->name('Services');
 Route::get('/edit-profile', function () {
-    return Inertia::render('edit-profile/EditProfile',['auth'=>Auth::user()]);
+    return Inertia::render('edit-profile/EditProfile1',['auth'=>Auth::user()]);
+});
+Route::get('/chat', function () {
+    return Inertia::render('Home',['auth'=>Auth::user()]);
 });
 Route::get('/post/{id}', function (string $id) {
 
@@ -56,8 +59,11 @@ Route::post('/bid/{id}', [RegisteredUserController::class, 'post_bid']);
 Route::get('/post-job', function () {
     return Inertia::render('job-post/Jobpost',['auth'=>Auth::user()]);
 });
+Route::get('/updatepp', function () {
+    return Inertia::render('updatepp/Layout',['path'=>Auth::user()]);
+});
 Route::get('/jobs', function () {
-    return Inertia::render('jobs/Jobs',['posts'=>Post::latest()->get()]);
+    return Inertia::render('jobs/Jobs',['posts'=>Post::latest()->with('user')->get()]);
 });
 Route::get('/dashboard-repairer', function () {
     return Inertia::render('repairer/Repairer');

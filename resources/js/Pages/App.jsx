@@ -26,7 +26,7 @@ function App() {
          */}
          {/* <EditProfile/>  */}
          {/* <Jobpost/>      */}
-         <Chat/>
+        
         <Head title="Home" />
     </div>
     

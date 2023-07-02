@@ -5,11 +5,15 @@ import InputError from '@/Components/InputError';
 import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 import './loginpage.css'
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import React, { useState } from "react";
 
 
 export default function Login({ status, canResetPassword }) {
+    const [err, setErr] = useState(false);
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -28,9 +32,21 @@ export default function Login({ status, canResetPassword }) {
 
     const submit = (e) => {
         e.preventDefault();
-
+        handleSubmit(e)
         post(route('login'));
     };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const email =data.email;
+        const password = data.password;
+    
+        try {
+          await signInWithEmailAndPassword(auth, email, '12345678');
+            console.log('logged in')
+        } catch (err) {
+          setErr(true);
+        }
+      };
 
     return (
         <GuestLayout>

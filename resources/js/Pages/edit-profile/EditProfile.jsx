@@ -1,5 +1,5 @@
 
-import React from 'react';
+import  React, { useContext } from 'react';
 import { Lastfooter,ImageUpload, Navbar2, Navbar3,Main_nav } from '../../Components'
 import './edit-profile.css'
 import avatar from './default-avatar.png'
@@ -8,13 +8,11 @@ import Footer from '../footer/Footer'
 import { Head, Link, useForm } from '@inertiajs/react';
 import { useState } from 'react'
 import { router } from '@inertiajs/react'
-import { Inertia } from '@inertiajs/inertia';
-import { InertiaLink } from '@inertiajs/inertia-react';
 
 
-const EditProfile = (auth) => {
-  console.log(auth);
+import { AuthContext } from '../../context/AuthContext'
 
+const EditProfile = (props,auth) => {
   const [values, setValues] = useState({
     name: "",
     username: "",
@@ -82,18 +80,17 @@ const EditProfile = (auth) => {
 
   const handleSubmit3 = (event) => {
     event.preventDefault();
-    post('/avatar', {
+    var response=post('/avatar', {
       preserveScroll: true, // optional
     });
+    console.log(response)
   };
-  var profile_picture= auth.auth.avatar !== null ? `/storage/${auth.auth.avatar}`:ava;
-
+  var profile_picture= props.props.auth.avatar !== null ? `/storage/${props.props.auth.avatar}`:ava;
+  const {currentUser} = useContext(AuthContext)
   return (
-    
     <div className='ep_main'>
-      
       <Head title="Edit_profile" />
-        <Main_nav props={auth}/>
+        <Main_nav props={props.props.auth}/>
         
         <div className='ep_main-container'>
           <div className='ep_main-container-head'>
@@ -143,7 +140,13 @@ const EditProfile = (auth) => {
             <input type='date' className='input-small' placeholder='DOB' id='dob' value={values.dob} onChange={handleChange}/>
             <input type='text' className='input-small' placeholder='City' id='city' value={values.city} onChange={handleChange}/><br/>
             <label>Gender</label><br/>
-            <input type='text' className='input-small' placeholder='Gender' id='gender' value={values.gender} onChange={handleChange}/><br/><br/>
+            <select name='gender' id='gender' onChange={handleChange} >
+              <option defaultSelected>Select</option>
+              <option value={1}>Male</option>
+              <option value={2}>Female</option>
+              <option value={3}>Others</option>
+            </select>
+            {/* <input type='text' className='input-small' placeholder='Gender' id='gender' value={values.gender} onChange={handleChange}/><br/><br/> */}
             <button type='submit' onClick={handleSubmit1}>Submit</button>
             </form>
             <form onSubmit={handleSubmit}>
@@ -170,6 +173,7 @@ const EditProfile = (auth) => {
      <Footer/>
      <Lastfooter/>
     </div>
+
   )
 }
 

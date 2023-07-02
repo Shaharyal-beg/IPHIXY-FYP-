@@ -15,7 +15,8 @@ const Jobs = (posts) => {
   posts1.forEach((post, index) => {
     postsList.push(<div className='post-descriptionAndImage postsInJobPage'>
       <div className='post-head'>
-        <h1><b>Users Name</b> <br/> Date/Time</h1>
+        <div className="image"><img src={`/storage/${post.user.avatar}`} alt="" srcset="" /></div>
+        <h1><b>Users Name: </b>{post.user.name} <br/> Date/Time: {post.created_at}</h1>
       </div>
     <div className='post-description'>
     <h4>Product Despcription</h4>

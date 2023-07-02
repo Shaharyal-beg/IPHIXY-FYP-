@@ -29,9 +29,18 @@ import { Head } from '@inertiajs/react';
 
 export default function Authenticated({ auth,posts }) {
   var profile_picture= auth.user.avatar !== null ? `/storage/${auth.user.avatar}`:ava;
+  const today = new Date();
+  const birthDate = new Date(auth.user.dob);
+  const diff = today.getTime() - birthDate.getTime();
+  const ageInMilliseconds = new Date(diff);
+  const calculatedAge = Math.abs(ageInMilliseconds.getUTCFullYear() - 1970);
 
   var date=new Date(auth.user.created_at)
   console.log(date)
+  let heading='';
+  if(posts.length>=1){
+    heading=<h1>Posts</h1>  
+  }
   var dateofmont=date.getDate()
   var month=date.getMonth()
   var year=date.getFullYear()
@@ -45,10 +54,8 @@ export default function Authenticated({ auth,posts }) {
       bidlist.push(
         <div className='bidsForUsersPost'>
           <p>Name:{bid.user.name}<br/>Email:{bid.user.email}<br></br>Bid amount:{bid.bid_price}</p><br></br>
-       
-       </div>
-      )
-       
+           </div>
+      )    
     })
     
     postsList.push(<div className='post-descriptionAndImage'>
@@ -69,6 +76,16 @@ export default function Authenticated({ auth,posts }) {
    {bidlist}
    </div>);
   });
+  var gender=''
+  if(auth.user.gender==1){
+    gender='male'
+  }
+  else if(auth.user.gender==2){
+    gender='female'
+  }
+  else{
+    gender='other'
+  }
   return (
 
     <div className='user-mp'>
@@ -76,22 +93,36 @@ export default function Authenticated({ auth,posts }) {
       <Main_nav props={auth.user}/>
       <div className='ump-main-sec'>
         <div className='ump-sub-sec1'>
-          <MoreHorizIcon style={{ marginLeft: '23.5vw' }} />
           <Avatar src={profile_picture} round size='9vw' style={{ marginLeft: '6vw' }} /> <br /><br />
           <div className='user-email-name'>
           <h2 style={{  fontWeight: 'bold', fontSize: '20px' }}>{auth.user.name}</h2>
           <h3 style={{ color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}</h3> <br />
           </div>
-          <p style={{ margin: '-2vh 0 0  3vw' }}><b>Gender</b><br />Male</p>
-          <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />{auth.user.city}</p><br /><br /><br />
+          {/* <p style={{ margin: '-2vh 0 0  3vw' }}><b>Gender</b><br />Male</p>
+          <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />c</p><br /><br /><br />
           <p style={{ margin: '-4vw 0 0 3vw' }}><b>Last Active</b><br />24 hr ago</p><br /><br />
           <p style={{ margin: ' -7vw 0 0 16vw' }}><b>Age</b><br />21 years old</p> <br /><br /><br />
-          <button style={{ margin: '-4vh 0 0 6vw', width: '10vw', height: '6vh', color: 'white', background: '#00acff', border: 'none', fontSize: '1vw' }}>Message Me</button>
-          
+          <button style={{ margin: '-4vh 0 0 6vw', width: '10vw', height: '6vh', color: 'white', background: '#00acff', border: 'none', fontSize: '1vw' }}>Message Me</button> */}
+          <div className='ump-sec1-information'>
+          <div className='usi gender'>
+            <span>Gender</span><br/><span>{gender}</span>
+          </div>
+          <div className='usi city'>
+          <span>City</span><br/><span>{auth.user.city}</span>
+          </div>
+          <div className='usi lastactive'>
+          <span>Last active</span><br/><span>24hrs ago</span>
+          </div>
+          <div className='usi age'>
+          <span>Age</span><br/><span>{calculatedAge}</span>
+          </div>
+          <button className='message-but'>Message Me</button>
+
+          </div>
         </div>
         <div className='ump-sub-sec2'>
           <img src={white_logo} alt="logo" className='w_logo' />
-          <p style={{ margin: "6vh 0 0 5vw" }}>Works For <br />{{auth.user.institute_job}} </p>
+          <p style={{ margin: "6vh 0 0 5vw" }}>Works For <br />{auth.user.institute_job} </p>
           <p style={{ margin: "6vh 0 0 5vw" }}>Joining Date <br />{`${dateofmont} ${month},${year}`}</p>
           
 
@@ -154,35 +185,8 @@ export default function Authenticated({ auth,posts }) {
           </p>
         </div>
         <div className='posts'>
-          <h1>Posts</h1>
-          {/* {posts.forEach((post, index) => {
-
-              <div className='post-descriptionAndImage'>
-              <div className='post-description'>
-              <h4>Product Despcription</h4>
-              <h5>Product Name: {post.productname} Job Title: Screen repairing</h5>
-              <h5>Area: {post.area}   Warranty Date: {post.w_date}</h5>
-              <h5>IntialBid Price: {post.bid_price}   Any Note:{post.note}</h5>
-              <h5>DESCRIPTION: {post.description}</h5>
-             </div>
-             <div className='post-image'>
-              <img src={`/storage/${post.image_path}`} alt="" srcset="" />
-             </div>
-             </div>
-          })} */}
+          {heading}
            {postsList}
-          
-          {/* <div className='post-description'>
-           <h4>Product Despcription</h4>
-           <h5>Product Name: Mobile phone Job Title: Screen repairing</h5>
-           <h5>Area: Nazimabad Warranty   Date: 2,nov,2023</h5>
-           <h5>IntialBid Price: 50000    Any Note:Jeck is repaired</h5>
-           <h5>DESCRIPTION: Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam, sequi quam totam esse dolorum suscipit non. Mollitia necessitatibus qui iure fugiat sint minima, quo hic atque accusamus et veniam.</h5>
-          </div>
-          <div className='post-image'>
-           Image
-          </div> */}
-          
         </div>
         
       </div>

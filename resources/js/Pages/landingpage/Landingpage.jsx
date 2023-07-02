@@ -10,7 +10,7 @@ const Landingpage = () => {
       
       
       <div className='content-mp'>
-        <h1 style={{textAlign : "left"}}><b>Looking to sell or repair your smarthphone,laptops....</b></h1><br />
+        <h2 style={{textAlign : "left"}}><b>Looking to sell or repair your smarthphone,laptops....</b></h2><br />
         <p style={{textAlign : "left", lineHeight: '4vh',fontSize:'25px'}}>Join thousand of people who've used IPHIXY as their go to source for electronics and stay satisfied with our hiogh quality service.</p><br />        
       </div>
       <br />

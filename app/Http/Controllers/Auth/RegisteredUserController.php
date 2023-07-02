@@ -34,6 +34,7 @@ class RegisteredUserController extends Controller
             'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
             'dob' => 'nullable|max:255',
             'city' => 'nullable|string|max:255',
+            'gender'=>'nullable|integer',
         ]);
         $update=[];
         if(!empty($request->password))
@@ -56,10 +57,11 @@ class RegisteredUserController extends Controller
         {
             $update['dob'] = $request->dob;
         }
-        // if(!empty($request->gender))
-        // {
-        //     $update['gender'] = $request->gender;
-        // }
+        if(!empty($request->gender))
+        {
+            $update['gender'] = $request->gender;
+        }
+
             $user->update($update);
         return redirect('/dashboard');
         
@@ -81,10 +83,11 @@ class RegisteredUserController extends Controller
                 'avatar'=>$path,
             ]);
             
-            return redirect('/dashboard');
+            return redirect('/updatepp');
         }
         
-        return redirect('/dashboard');
+        
+        return redirect('/updatepp');
     }
 
     /**

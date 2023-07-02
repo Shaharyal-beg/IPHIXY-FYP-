@@ -5,6 +5,11 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, db, storage } from "../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
+import React, { useState } from "react";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -30,10 +35,59 @@ console.log(data);
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route('register'));
+        handleSubmit(e)
     };
-
+    const [err, setErr] = useState(false);
+    const [loading, setLoading] = useState(false);
+  
+    const handleSubmit = async (e) => {
+      setLoading(true);
+      e.preventDefault();
+      const displayName = data.name;
+      const email = data.email;
+      const password = '12345678';
+      const file = null;
+  
+      try {
+        //Create user
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+  
+        //Create a unique image name
+        const date = new Date().getTime();
+        const storageRef = ref(storage, `${displayName + date}`);
+  
+        await uploadBytesResumable(storageRef, file).then(() => {
+          getDownloadURL(storageRef).then(async (downloadURL) => {
+            try {
+              //Update profile
+              await updateProfile(res.user, {
+                displayName,
+                photoURL: null,
+              });
+              //create user on firestore
+              await setDoc(doc(db, "users", res.user.uid), {
+                uid: res.user.uid,
+                displayName,
+                email,
+                photoURL: null,
+              });
+  
+              //create empty user chats on firestore
+              await setDoc(doc(db, "userChats", res.user.uid), {});
+            } catch (err) {
+              console.log(err);
+              setErr(true);
+              setLoading(false);
+            }
+          });
+        });
+      } catch (err) {
+        setErr(true);
+        setLoading(false);
+      }
+    };
+  
     return (
         <GuestLayout>
             <Head title="Register" />

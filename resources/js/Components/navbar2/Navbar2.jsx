@@ -18,9 +18,10 @@ const Navbar2 = () => {
         </div>
         <div className='ump-nav-list2'>
             <ul>
+                <li > <a href="/dashboard"></a>  Dashboard</li>
                 <li style={{marginTop:'3vh'}}> <ModeEditIcon/> <a href="/edit-profile">Edit Profile</a> </li>
                 <li><AddBoxIcon/> <a href="/post-job"> Post a Job</a></li>
-                <li><ChatIcon/> Chat</li>
+                <li><a href="/chat"><ChatIcon/> Chat</a></li>
                 <li style={{marginLeft:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
                 </ul>
                 

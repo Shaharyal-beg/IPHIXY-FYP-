@@ -25,6 +25,7 @@ class User extends Authenticatable
         'dob',
         'email',
         'password',
+        'gender',
         'avatar',
         'type',
         'institute_uni',
