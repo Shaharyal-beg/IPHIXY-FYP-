@@ -15,15 +15,18 @@
 }
 .content-mp{
     width: 60vw;
-    height: 45vh;
+    height: 47vh;
     margin-top: 30vh;
     color: rgb(243, 241, 241);
     z-index: 1000;  
     margin-left: 4vw;  
     text-align: left;
     overflow: hidden;
-    
-    
+}
+.content-mp p{
+    text-align: left;
+    line-height: 4vh;
+    font-size: 25px;
 }
 .content-mp{
     font-size: 55px;
@@ -58,4 +61,29 @@ button{
     border: solid 2px rgb(14, 13, 13);
     color: black;
     font-weight: bold;
+}
+@media screen and (max-width:600px){
+    .main-page {
+        background-image: none;
+        text-align: center;
+    }
+    .content-mp{
+        margin-left: 100px;
+        width: 400px;
+    }
+
+    .main-page h2{
+        font-size: 26px;
+        color: black;
+    }
+    .main-page p{
+        font-size: 15px;
+        color: grey;
+        margin-top: -5vh;
+    }
+    .bt{
+        width: 17vw;
+    }
+
+    
 }

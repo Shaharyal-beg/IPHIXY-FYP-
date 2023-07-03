@@ -20,8 +20,13 @@ const Navbar = () => {
         <li>Help</li>
         <li><a href='/login'>Login</a></li>
         <li><a href='/register'>SignUp</a></li>
-      </ul>  
+        <div className='menu-icon'>
+        menu
       </div>
+      </ul>  
+     
+      </div>
+    
     </div>
     
    

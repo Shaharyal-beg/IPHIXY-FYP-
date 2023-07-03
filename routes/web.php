@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('user/User',['posts'=>Auth::user()->posts()->with('bids.user')->get(),]);
+    return Inertia::render('user/User',['posts'=>Auth::user()->posts()->with('bids.user')->get(),
+'scrappers'=>User::where('type','3')->take(3)->oldest()->get(),
+'repairers'=>User::where('type','2')->take(3)->get(),]);
 })->middleware('auth')->name('dashboard');
 
 // Route::middleware('auth')->group(function () {

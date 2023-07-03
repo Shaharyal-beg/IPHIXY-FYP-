@@ -63,14 +63,12 @@ console.log(data);
               //Update profile
               await updateProfile(res.user, {
                 displayName,
-                photoURL: null,
               });
               //create user on firestore
               await setDoc(doc(db, "users", res.user.uid), {
                 uid: res.user.uid,
                 displayName,
                 email,
-                photoURL: null,
               });
   
               //create empty user chats on firestore

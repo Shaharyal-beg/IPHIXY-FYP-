@@ -4,7 +4,7 @@
    
 }
 .ump-nav-list3{
-    width: 70vw;
+    width: 100vw;
     height: 11vh;
     
     margin-left: 0vw;
@@ -22,4 +22,7 @@
     height: 7vh;
     margin-bottom: 2vh;
     z-index: 3; 
+}
+.ump-nav-list3 li{
+    cursor: pointer;
 }

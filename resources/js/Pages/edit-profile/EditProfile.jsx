@@ -80,11 +80,25 @@ const EditProfile = (props,auth) => {
 
   const handleSubmit3 = (event) => {
     event.preventDefault();
-    var response=post('/avatar', {
+    post('/avatar', {
       preserveScroll: true, // optional
     });
-    console.log(response)
+    // update();
   };
+//   function update(){
+//     const docRef = doc(db, "users", currentUser.uid);
+//   const data = {
+//     photoURL: props.props.auth.user.avatar
+//   };
+//   updateDoc(docRef, data)
+//   .then(docRef => {
+//       console.log("A New Document Field has been added to an existing document");
+//       window.location.replace('/dashboard');
+//   })
+//   .catch(error => {
+//       console.log(error);
+//   })
+// }
   var profile_picture= props.props.auth.avatar !== null ? `/storage/${props.props.auth.avatar}`:ava;
   const {currentUser} = useContext(AuthContext)
   return (

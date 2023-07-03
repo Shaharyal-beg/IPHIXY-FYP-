@@ -22,7 +22,8 @@ const Navbar3 = () => {
                 <li><AddBoxIcon/> <a href="/jobs">Jobs</a></li>
                 <li><ChatIcon/> <a href='/chat'> Chat</a></li>
                 {/* <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'black'}}/></li> */}
-                <li style={{marginRight:'-4vw'}}><Dropdown.Link href={route('logout')} method="post" as="button"><LogoutIcon/> </Dropdown.Link></li>                           
+                <li ><a><Dropdown.Link href={route('logout')} method="post" as="button">Logout </Dropdown.Link></a></li>                           
+                
                 </ul>
                 
         </div>

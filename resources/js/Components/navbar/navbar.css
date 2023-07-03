@@ -24,7 +24,7 @@
     
     
 }
-.logo,img{
+.logo img{
     width: 18vw;
     height: 7vh;
     margin-bottom: 2vh;
@@ -88,58 +88,24 @@ li:hover:after{
     pointer-events: none;
     
 }
-
-.v-menu{
-    height: 100vh;
-    width: 100vw;
-    background: blue;
-    position: fixed;
-    right: -100vw;
-    top: 0;
-    z-index: 1;
-    transition: all 0.3s;
-}
-.hamburger{
+.menu-icon{
     display: none;
-    width:50px;
-    height: 50px;
-    cursor: pointer;
-    position: fixed;
-    z-index: 2;
-    right:1vw;
-    top:2vh;
-    margin:5px 10px 10px 10px;
-}
-.hamburger:hover+.v-menu{
-    right:0;
 }
 
-.v-menu:hover{
-    right:0;
-}
-*/
-
-.v-menu-open{
-    right:0;
-}
-    
-.v-menu{
-      background:rgba(52, 152, 219,0.5);
-}
-
-.v-menu li{
-    font-size:2em;
-    color:#2d2d2d;
-    padding:5%;
-    display: block;
-}
-
-
-@media screen and (max-width:480px){
+@media screen and (max-width:600px){
     .hamburger{
         display: block;
     }
     .nav-list{
         display: none;
+    }
+    .logo {
+        width: 25vw;
+    }
+    .logo img{
+        width: 40vw;
+    }
+    .menu-icon{
+        display: block;
     }
 }   

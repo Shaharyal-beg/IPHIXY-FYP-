@@ -4,9 +4,13 @@ import { auth } from '../firebase'
 import { AuthContext } from '../context/AuthContext'
 import ava from './ava1.jpg'
 
-const Navbar = (auth) => {
+
+
+const Navbar = () => {
+  console.log(auth)
   const {currentUser} = useContext(AuthContext)
-  var profile_picture= currentUser.photoURL !== null ? `/storage/${currentUser.photoURL}`:ava;
+  var profile_picture= currentUser.photoURL != null ? `/storage/${currentUser.photoURL}`:ava;
+  console.log(currentUser)
   return (
     <div className='navbar'>
       <span className="logo">IPHIXY Chat</span>
