@@ -17,7 +17,7 @@ const Navbar = () => {
       <ul className='all-nav-items'>
         <li> <a href='/services'>Services</a></li>
         <li><a href='/about'>About us</a></li>
-        <li>Help</li>
+        <li><a href='/help'>Help</a></li>
         <li><a href='/login'>Login</a></li>
         <li><a href='/register'>SignUp</a></li>
         <div className='menu-icon'>

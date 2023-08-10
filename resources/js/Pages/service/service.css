@@ -53,3 +53,16 @@
     background-image: none;
     background-color: rgb(14, 152, 207);
 }
+@media screen and (max-width:600px){
+    .sub-scon{
+        display: none;
+    }
+    .ser-p{
+        margin: -65vh 0 10vh 0;
+        font-size: 20px;
+        background-color: #00acff;
+
+        
+
+    }
+}

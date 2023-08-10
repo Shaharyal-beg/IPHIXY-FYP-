@@ -1,12 +1,12 @@
 import React from 'react';
 import { Head } from '@inertiajs/react';
-import {Landingpage,  Footer, About, Service, User, EditProfile, Jobpost, Jobs,Chat} from './';
+import {Landingpage,  Footer, About, Service, Help} from './';
  import {Navbar, Separator, Process, About2, Form,Login } from '../Components';
 import './App.css';
 import Lastfooter from '../Components/last-footer/Lastfooter';
 
-function App() {  
- 
+function App(nums) {  
+ console.log(nums)
   return (
     
      <div className="App">
@@ -17,15 +17,11 @@ function App() {
         <Service />
         <Process />
         <About />
-        <About2 />
+        <About2 props={nums}/>
         <Footer />
         <Lastfooter/>
-        {/* <Jobs/> */}
-        {/* <Login /> */}
-        {/* <User />
-         */}
-         {/* <EditProfile/>  */}
-         {/* <Jobpost/>      */}
+        
+       
         
         <Head title="Home" />
     </div>

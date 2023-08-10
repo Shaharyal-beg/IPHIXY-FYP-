@@ -48,7 +48,7 @@ console.log(data);
       const email = data.email;
       const password = '12345678';
       const file = null;
-  
+        console.log('hello')
       try {
         //Create user
         const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -73,6 +73,7 @@ console.log(data);
   
               //create empty user chats on firestore
               await setDoc(doc(db, "userChats", res.user.uid), {});
+              console.log('hello')
             } catch (err) {
               console.log(err);
               setErr(true);

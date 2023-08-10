@@ -1,11 +1,12 @@
 import React from 'react'
 import './service.css'
 import { Head, Link, useForm } from '@inertiajs/react';
+import {Navbar} from '../../Components'
 
 
 const Service = () => {
   return (
-    
+    <>
     <div className='serv'>
     <Head title="Services" />
       <h1 className='ser-h'>Our Service</h1>
@@ -25,6 +26,7 @@ const Service = () => {
 
     
     </div>
+    </>
   )
 }
 

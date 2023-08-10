@@ -55,7 +55,11 @@ export default function Authenticated({ auth, posts, repairers, scrappers }) {
       console.log(post)
       bidlist.push(
         <div className='bidsForUsersPost'>
-          <p>Name:{bid.user.name}<br />Email:{bid.user.email}<br></br>Bid amount:{bid.bid_price}</p><br></br>
+          <div className='bidsForUsersPost-avatar'><img src={`/storage/${bid.user.avatar}`}/></div>
+          <div className='bidsForUsersPost-details'><p style={{float:'left'}}>Name:{bid.user.name}<br />Email:{bid.user.email}<br></br>Bid amount:{bid.bid_price}</p></div>
+          <div className='bidsForUsersPost-button'><a className='post-chat-button' href='/chat'> Chat</a></div>
+          {/* <p style={{float:'left'}}>Name:{bid.user.name}<br />Email:{bid.user.email}<br></br>Bid amount:{bid.bid_price}</p>
+          <a className='post-chat-button' href='/chat'> Chat</a> */}
         </div>
       )
     })
@@ -88,6 +92,16 @@ export default function Authenticated({ auth, posts, repairers, scrappers }) {
   else {
     gender = 'other'
   }
+  var type=''
+  if (auth.user.type == 2) {
+    type = 'Repairer'
+  }
+  else if (auth.user.type == 3) {
+    type = 'Scrapper'
+  }
+  else {
+    type = 'Costumer'
+  }
 
 var repairerList=[]
 repairers.forEach(repairer =>{
@@ -95,7 +109,7 @@ repairers.forEach(repairer =>{
   repairerList.push(
     <div className='RR-box rr2'>
       <Avatar src={`/storage/${repairer.avatar}`} round size='3.5vw' />
-      <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>{repairer.name}&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+      <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>{repairer.name}&nbsp;</h2>
       <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>{repairer.email}</h3>
     </div>
   )
@@ -105,14 +119,22 @@ scrappers.forEach(scrapper=>{
   scrapperList.push(
     <div className='Rs-box rs1'>
             <Avatar src={`/storage/${scrapper.avatar}`} round size='3.5vw' />
-            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>{scrapper.name}&nbsp;<CheckCircleIcon style={{ marginLeft: '3vw', color: '#00acff' }} />98%</h2>
+            <h2 style={{ marginTop: "-7vh", marginLeft: "6vw" }}>{scrapper.name}&nbsp;</h2>
             <h3 style={{ marginTop: "0.5vh", marginLeft: "6vw", color: '#a0a0a0' }}>{scrapper.email}</h3>
             </div>
   )
 })
-// if(auth.user.type!=4){
-//   document.getElementById("rs-rr").style="display:none;"
-// }
+var recommend ;
+if(auth.user.type==4){
+  // document.getElementById("rs-rr").style="display:none;"
+  recommend=<div className='ump-sub-sec3' id='rs-rr'>
+  <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Repair's</h1>
+  {repairerList}
+  <br />
+  <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Scraper's</h1>
+  {scrapperList}
+</div>
+}
   return (
 
     <div className='user-mp'>
@@ -123,7 +145,8 @@ scrappers.forEach(scrapper=>{
           <Avatar src={profile_picture} round size='9vw' style={{ marginLeft: '6vw' }} /> <br /><br />
           <div className='user-email-name'>
             <h2 style={{ fontWeight: 'bold', fontSize: '20px' }}>{auth.user.name}</h2>
-            <h3 style={{ color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}</h3> <br />
+            <h3 style={{ color: '#a0a0a0', fontWeight: 'bold', fontSize: '20px' }}>{auth.user.email}<br/>{type}</h3> <br />
+            
           </div>
           {/* <p style={{ margin: '-2vh 0 0  3vw' }}><b>Gender</b><br />Male</p>
           <p style={{ margin: ' -4vw 0 0 16vw' }}><b>City</b><br />c</p><br /><br /><br />
@@ -143,7 +166,7 @@ scrappers.forEach(scrapper=>{
             <div className='usi age'>
               <span>Age</span><br /><span>{calculatedAge}</span>
             </div>
-            <button className='message-but'>Message Me</button>
+            
 
           </div>
         </div>
@@ -154,13 +177,14 @@ scrappers.forEach(scrapper=>{
 
 
         </div>
-        <div className='ump-sub-sec3' id='rs-rr'>
+        {recommend}
+        {/* <div className='ump-sub-sec3' id='rs-rr'>
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Repair's</h1>
           {repairerList}
           <br />
           <h1 style={{ fontSize: '1.5vw', fontWeight: 'bold' }}>Recommended Scraper's</h1>
           {scrapperList}
-        </div>
+        </div> */}
         <div className='ump-sub-sec4'>
           <h2><a href='#' style={{ color: '#00acff' }} >Profile</a>  <a href="#" style={{ color: '#a0a0a0' }}>About</a></h2>
         </div>
@@ -186,8 +210,8 @@ scrappers.forEach(scrapper=>{
         </div>
 
       </div>
-      <Footer />
-      <Lastfooter />
+      {/* <Footer />
+      <Lastfooter /> */}
     </div>
   )
 }

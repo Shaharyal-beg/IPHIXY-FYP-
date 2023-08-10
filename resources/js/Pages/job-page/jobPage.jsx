@@ -31,8 +31,13 @@ const jobPage = (post,auth) => {
         <Main_nav props={post1.auth.user} />
         <div className='post-descriptionAndImage'>
         <div className='post-head'>
-        <h1><b>Users Name</b> <br/> Date/Time</h1>
+        <div className="image post-avatar"><img src={`/storage/${post.user.avatar}`} alt="" srcset="" /></div>
+        <h1><b>Users Name: </b>{post.user.name} <br/> Date/Time: {post.created_at}</h1>
       </div>
+        {/* <div className='post-head'>
+          <img className='bidsForUsersPost-avatar' src={`/storage/${post.user.avatar}`} alt="" />
+        <h1 className='n-d'><b>{post.user.name}</b> <br/> {post.created_at}</h1>
+      </div> */}
     <div className='post-description'>
     <h4>Product Despcription</h4>
     <h5>Product Name: {post.productname} <br/>Job Title: Screen repairing</h5>

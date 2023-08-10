@@ -15,15 +15,15 @@ const Jobs = (posts) => {
   posts1.forEach((post, index) => {
     postsList.push(<div className='post-descriptionAndImage postsInJobPage'>
       <div className='post-head'>
-        <div className="image"><img src={`/storage/${post.user.avatar}`} alt="" srcset="" /></div>
+        <div className="image post-avatar"><img src={`/storage/${post.user.avatar}`} alt="" srcset="" /></div>
         <h1><b>Users Name: </b>{post.user.name} <br/> Date/Time: {post.created_at}</h1>
       </div>
     <div className='post-description'>
-    <h4>Product Despcription</h4>
-    <h5>Product Name: {post.productname} <br/>Job Title: Screen repairing</h5>
-    <h5>Area: {post.area}   <br/>Warranty Date: {post.w_date}</h5>
-    <h5>IntialBid Price: {post.bid_price}  <br/> Any Note:{post.note}</h5>
-    <h5>DESCRIPTION: {post.description}</h5>
+    <h1>Product Despcription:</h1>
+    <h5><b>Product Name: </b>{post.productname} <br/><b>Job Title:</b> Screen repairing</h5>
+    <h5><b>Area:</b> {post.area}   <br/><b>Warranty Date:</b> {post.w_date}</h5>
+    <h5><b>IntialBid Price: </b>{post.bid_price}  <br/><b> Any Note:</b>{post.note}</h5>
+    <h5><b>DESCRIPTION:</b> {post.description}</h5>
    </div>
    <div className='post-image'>
     <img src={`/storage/${post.image_path}`} alt="" srcset="" />

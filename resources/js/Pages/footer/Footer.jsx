@@ -21,21 +21,21 @@ const Footer = () => {
         <div className='s-foot'>
           <br />
           <br />
-          <h2 style={{fontSize:'1.2vw',fontWeight:'bolder'}}>Services</h2>
+          <h2 style={{fontWeight:'bolder'}}>Services</h2>
           <br />
           <p>Electronic Gadgets Repair</p><br />
           <p>Buy & Sell of Scrap</p>
         </div>
         <div className='s-foot'>
           <br /><br />
-          <h2 style={{fontSize:'1.2vw',fontWeight:'bolder'}}>About</h2><br />
+          <h2 style={{fontWeight:'bolder'}}>About</h2><br />
           <p>About Us</p> <br />
           <p>How it Works</p> <br /> 
           <p>Our mission</p>
         </div>
         <div className='s-foot'>
           <br /><br />
-          <h2 style={{fontSize:'1.2vw',fontWeight:'bolder'}}>Terms</h2><br />
+          <h2 style={{fontWeight:'bolder'}}>Terms</h2><br />
           <p>Privacy Policy</p><br />
           <p>Terms and Conditions</p><br />
           <p>Copyright Policy</p><br />

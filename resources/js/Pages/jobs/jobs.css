@@ -84,12 +84,13 @@
     background-color: #00ACFF;
     color: white;
     border-radius: 10px;
-    margin: 0 0 1vh 18vw
+    margin: 1vh 0 1vh 18vw
 }
 .post-head{
     background-color: #00ACFF;
     color: white;
     padding: 2vh 2vw;
+    height: 13vh;
 }
 .posts-area{
     width: 100vw;
@@ -97,4 +98,30 @@
 }
 .postsInJobPage{
     float: left;
+}
+.post-avatar{
+    width: 5vw;
+    height: 10vh;
+    
+    border: none;
+    border-radius: 50%;
+    float: left;
+}
+.post-avatar img{
+    width: 10vw;
+    height: 9vh;
+    margin: 0;
+}
+.post-head h1{
+    margin: 0 0 0 6vw;
+}
+.post-description h1{
+    font-size: 25px;
+
+}
+.post-description{
+    border-bottom: 1px solid grey;
+}.post-image{
+    
+    border-bottom: 1px solid grey;
 }

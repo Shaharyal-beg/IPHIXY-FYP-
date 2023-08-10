@@ -53,7 +53,47 @@
     height: 12vh;
     margin-top: 7vh;
     margin-left: 2vw;
+}
+.first-para{
+    font-size: 15px;
+}
+.abt-cont h4{
+    font-size: 1.4vw;
+}
+.sub-con h3{
+    font-size: 30px;
+}
+.sub-con p{
+    font-size: 15px;
+}
 
-
+@media screen and (max-width:600px){
+    .abt{
+        height: 70vh;
+    }
+    .abt-pic{
+        display: none;
+    }
+    .abt-cont{
+        margin: 0 0 0 8vw;
+        width: 500px;
+    }
+    .abt-cont h4{
+        font-size: 2.4vw;
+        margin-bottom: 5vh;
+    }
+    .icon-img{
+        height: 6vh;
+    }
+    .sub-con h3{
+        font-size: 15px;
+        
+    }
+    .sub-con p{
+        width: 15px;
+    }
+    .abt-main-con{
+        display: none;
+    }
 }
 

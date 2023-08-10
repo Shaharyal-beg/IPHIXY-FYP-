@@ -25,6 +25,10 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'nums'=>[User::where('type','3')->count(),
+        User::where('type','2')->count(),
+        User::where('type','4')->count(),
+        Post::count()]
     ]);
 });
 
@@ -43,6 +47,9 @@ Route::get('/dashboard', function () {
 Route::get('/about', function () {
     return Inertia::render('about/About');
 });
+Route::get('/help', function () {
+    return Inertia::render('help/Help');
+});
 Route::get('/services', function () {
     return Inertia::render('service/Service');
 })->name('Services');
@@ -54,7 +61,7 @@ Route::get('/chat', function () {
 });
 Route::get('/post/{id}', function (string $id) {
 
-    $post=Post::find($id);
+    $post=Post::with('user')->find($id);
     return Inertia::render('job-page/jobPage',['post'=>$post]);
 });
 

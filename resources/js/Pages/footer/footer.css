@@ -26,3 +26,21 @@
     margin-left: 2.5vw;
     float: left;
 }
+.s-foot h2{
+    font-size: 1.2vh;
+}
+@media screen and (max-width:600px){
+    .foot{
+        height: 70vh;
+    }
+    p{
+        font-size: 11px;
+    }
+    .s-foot h2{
+        margin: -5vh 0 0 0;
+        font-size: 15px;
+    }
+    .s-foot p{
+        font-size: 10px;
+    }
+}

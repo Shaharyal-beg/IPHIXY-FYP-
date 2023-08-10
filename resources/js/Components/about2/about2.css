@@ -30,3 +30,17 @@
     margin-top: 1vh;
     margin-left: 1.2vw;
 }
+@media screen and (max-width:600px){
+   .abt-2{
+    background-image: url('./About.png');
+    background-color: #007dba;
+    height: 30vh;
+   }
+   .abt2-subcon h1{
+
+    font-size: 15px;
+   }
+   .abt2-subcon img{
+    height: 6vh;
+   }
+}

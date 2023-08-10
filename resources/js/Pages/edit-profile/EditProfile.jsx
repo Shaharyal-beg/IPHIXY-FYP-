@@ -116,7 +116,7 @@ const EditProfile = (props,auth) => {
           <div className='ep_main-container-body1'>
             <img src={profile_picture} alt='check' />
             <form onSubmit={handleSubmit3}>
-      <input type="file" name="image" onChange={handleFileChange} />
+      <input type="file" name="image" onChange={handleFileChange} style={{marginLeft:'01vw'}}/>
       <button type="submit">Upload</button>
     </form>
 {/* 
@@ -130,7 +130,7 @@ const EditProfile = (props,auth) => {
             {/* <button type='submit' onClick={handlesubmit2}>Change</button>
             </form> */}
             <br/>
-            <input type='long-text' placeholder='Tell about yourself....'/>            
+                        
           </div>
           <div className='ep_main-container-body2'>
             <h2>

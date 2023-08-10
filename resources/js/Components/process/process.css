@@ -20,3 +20,17 @@
     margin-top: 3vh;
     text-align: left;
 }
+.sub-pcon h1{
+    font-size: 1.7vw;
+}
+.sub-pcon p{
+    font-size: 1.1vw;
+}
+@media screen and (max-width:600px){
+    .sub-pcon h1{
+        font-size: 15px;
+    }
+    .sub-pcon p{
+        font-size: 10px;
+    }
+}

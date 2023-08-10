@@ -96,8 +96,8 @@ li:hover:after{
     .hamburger{
         display: block;
     }
-    .nav-list{
-        display: none;
+    .nav-list li{
+       font-size: 12px;
     }
     .logo {
         width: 25vw;
@@ -105,7 +105,5 @@ li:hover:after{
     .logo img{
         width: 40vw;
     }
-    .menu-icon{
-        display: block;
-    }
+   
 }   

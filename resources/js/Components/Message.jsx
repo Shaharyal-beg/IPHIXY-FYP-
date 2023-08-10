@@ -21,16 +21,16 @@ const Message = ({ message }) => {
         <img
           src={
             message.senderId === currentUser.uid
-              ? currentUser.photoURL
-              : data.user.photoURL
+              ? "/storage/"+currentUser.photoURL
+              : "/storage/"+data.user.photoURL
           }
           alt=""
         />
-        <span>just now</span>
+        
       </div>
       <div className="messageContent">
         <p>{message.text}</p>
-        {message.img && <img src={message.img} alt="" />}
+        {message.img && <img src={"/storage/"+message.img} alt="" />}
       </div>
     </div>
   );

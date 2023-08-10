@@ -27,7 +27,7 @@
     width: 23vw;
     height: 30vh;
     
-    margin: 0 0 0 1vw;
+    margin: 2vh 0 0 1vw;
 }
 .usi{
     width: 10vw;
@@ -218,5 +218,36 @@
     font-weight: 400;
     border-radius: 20px;
     padding: 5px;
+    display: flex;
+}
+.bidsForUsersPost-avatar{
+    width:4vw ;
+    height:3vw ;
+    margin: 0 0 0 0vw;   
+}
+.bidsForUsersPost-avatar img{
+    width: 3vw;
+    height: 6vh;
+    border-radius: 50%;
 }
 
+.bidsForUsersPost-details{
+    width:22vw ;
+    height:5vw ;
+  
+    margin: 0 0 0 3vw;   
+    text-align: left;
+}
+
+.bidsForUsersPost-button{
+    width:5vw ;
+    height:3vw ;
+    margin: 3vh 0 0 7vw;    
+}
+.post-chat-button{
+    
+    color: #00ACFF;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+}

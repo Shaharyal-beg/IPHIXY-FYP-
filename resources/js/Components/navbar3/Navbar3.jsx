@@ -21,8 +21,9 @@ const Navbar3 = () => {
                 <li style={{marginTop:'3vh'}}> <ModeEditIcon/> <a href="/edit-profile">Edit Profile</a> </li>
                 <li><AddBoxIcon/> <a href="/jobs">Jobs</a></li>
                 <li><ChatIcon/> <a href='/chat'> Chat</a></li>
+                <li a className='logout-but'><a><Dropdown.Link  href={route('logout')} method="post" as="button">Logout </Dropdown.Link></a></li>
                 {/* <li><SearchIcon/><input type="Search" placeholder='Search here' style={{color:'black'}}/></li> */}
-                <li ><a><Dropdown.Link href={route('logout')} method="post" as="button">Logout </Dropdown.Link></a></li>                           
+                {/* <li ><a><Dropdown.Link href={route('logout')} method="post" as="button">Logout </Dropdown.Link></a></li>                            */}
                 
                 </ul>
                 

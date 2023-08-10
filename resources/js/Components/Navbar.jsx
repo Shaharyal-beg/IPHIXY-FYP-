@@ -7,7 +7,7 @@ import ava from './ava1.jpg'
 
 
 const Navbar = () => {
-  console.log(auth)
+
   const {currentUser} = useContext(AuthContext)
   var profile_picture= currentUser.photoURL != null ? `/storage/${currentUser.photoURL}`:ava;
   console.log(currentUser)
